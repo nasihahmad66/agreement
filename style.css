@@ -1,0 +1,31 @@
+ 
+*{ margin: 0; padding: 0; }
+body{ font-size: 12px; font-family: 'Calibri'; line-height: 1.5em; color: #000; text-align: center; background: #F5DAA2; }
+.container { width:94%; margin:10px 10px 10px 30px;}
+ol,ul{ list-style-type: none; }
+a{ color: #0018FF; text-decoration: none; }
+a:hover{ color: #FF1F00; text-decoration: none; }
+p{ margin: 0; padding: 10px 0; text-shadow: 0px 1px 0px #fff; }
+p.err{ color: #FF0000; border-bottom: 1px solid #CFCFCF; box-shadow: 0px 1px 0px #fff; margin: 0 0 10px 0;}
+table{ margin: 0; padding: 0; border: none; width: 100%; border: 1px solid #888888; border-collapse: collapse; text-shadow: 0px 1px 0px #fff;}
+tr.top{ height: 30px; background: #FEF08E; font-weight: bold; text-transform: uppercase; }
+td{ padding: 3px; }
+form{ margin: 10px 0; padding: 0; }
+input{ margin: 2px 0 10px 0; padding: 6px; font-size: 13px; font-family: 'Calibri'; border: 1px solid #0565a2; }
+input#button{ margin: 2px 0 10px 0; padding: 6px; font-size: 13px; font-family: 'Calibri'; border: 1px solid #89c1f5; width: 150px; font-weight: bold; cursor: pointer; background: #89c1f5; text-transform: uppercase;text-shadow: 0px 1px 0px #eee;}
+.wrap{ margin: 0 auto; padding: 0; width: 90%; text-align: justify; }
+.top{ margin: 0; padding: 0; height: 70px; }
+.top h1{ margin: 0; padding: 20px 0 0 0; font-size: 30px; text-shadow: 0px 1px 0px #fff;}
+.top p{ margin: 0; padding: 10px 0; }
+.nav{ margin: 5px 0; padding: 0; height: 35px; background: #7FBDFA; box-shadow: 0px 1px 0px #fff; }
+.nav li{ float: left; display: inline; }
+.nav li a{ margin: 0; padding: 12px 20px; font-weight: bold; color: #0018FF; line-height: 35px; text-transform: uppercase; }
+.nav li a:hover{ color: #FF0000; }
+.page{ margin: 20px 0; padding: 0; }
+.box{ margin: 0 0 20px 0; padding: 0; }
+.box h1{ text-transform: uppercase; border-bottom: 1px solid #CFCFCF; font-size: 18px; font-weight: bold; padding: 0 0 5px 0; font-family: 'Calibri'; color: #0e4083; text-shadow: 0px 1px 0px #fff; box-shadow: 0px 1px 0px #fff; margin: 0 0 3px 0;}
+.box ul#sidebar{ margin: 0; padding: 0; }
+.box ul#sidebar li{ margin: 0; padding: 0; }
+.box ul#sidebar li a{ margin: 0; padding: 7px; font-weight: bold; display: block; border-bottom: 1px solid #D0D0D0; }
+.reply { margin-left: 50px;}
+.descript { font-family:'Futura LT'; font-size:14px;}

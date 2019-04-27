@@ -1,0 +1,16 @@
+input{
+	border:1px solid #0565A2;
+	padding:6px;
+	margin:2px 0 10px 0;
+}
+
+body{
+	background:#CBF2D5;
+}
+
+#main{
+	max-width:1280px;
+	width:100%;
+	margin-left:20px;
+	margin-right:20px;
+}
