@@ -8,8 +8,8 @@ include('config.php');
 $jenis="AGG-";
 $query = "SELECT max(id) as maxID FROM formulir1 WHERE id LIKE '$jenis%'";
 
-$hasil = mysql_query($query);
-$data = mysql_fetch_array($hasil);
+$hasil = mysqli_query($connect, $query);
+$data = mysqli_fetch_array($hasil);
 $idMax = $data['maxID'];
 $noUrut = (int) substr($idMax, 5, 10);
 $noUrut++;
@@ -465,13 +465,13 @@ $_SESSION['checkbox111'] = $s23;
 
 if($Nama_Lengkap!='' || $Tempat_Lahir!='' || $thn!='' || $Alamat_Rumah!='' || $Kode_Pos!='')
 {
-	$query = mysql_query("insert into formulir1 (id,Kode_AE,Nama_Lengkap,Tempat_Lahir,Tanggal_Lahir,Bulan_lahir,Tahun_lahir,Alamat_Rumah,Kode_Pos,status_perkawinan,email,No_Identitas,No_Telp,Transaksi,sebutkan,Jenis_Transaksi,forexoption,ip_address)
+	$query = mysqli_query($connect, "insert into formulir1 (id,Kode_AE,Nama_Lengkap,Tempat_Lahir,Tanggal_Lahir,Bulan_lahir,Tahun_lahir,Alamat_Rumah,Kode_Pos,status_perkawinan,email,No_Identitas,No_Telp,Transaksi,sebutkan,Jenis_Transaksi,forexoption,ip_address)
 	values('".$_SESSION['newid']."','".$_SESSION['kodeae']."','".$_SESSION['nama']."','".$_SESSION['tempat']."','".$_SESSION['tgl1']."','".$_SESSION['bln1']."','".$_SESSION['thn1']."', '".$_SESSION['alamat']."', '".$_SESSION['pos']."' ,'".$_SESSION['status']."' ,'".$_SESSION['email']."', '".$_SESSION['id']."', '".$_SESSION['telepon']."','".$_SESSION['pengalaman']."', '".$_SESSION['sebut']."', '".$_SESSION['page']."','".$_SESSION['forexoption']."','$ip')");
-	$form2 = mysql_query("insert into formulir2 (id, Menerima, Tanggal, No_Identitas)
+	$form2 = mysqli_query($connect, "insert into formulir2 (id, Menerima, Tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$form3 = mysql_query("insert into formulir3 (id, Nama_Lengkap, Tempat_Lahir, Tanggal_Lahir, Bulan_lahir, Tahun_lahir, Alamat_Rumah, Kode_Pos, No_Identitas, No_Demo, Menerima, Tanggal)
+	$form3 = mysqli_query($connect, "insert into formulir3 (id, Nama_Lengkap, Tempat_Lahir, Tanggal_Lahir, Bulan_lahir, Tahun_lahir, Alamat_Rumah, Kode_Pos, No_Identitas, No_Demo, Menerima, Tanggal)
 	values('".$_SESSION['newid']."', '".$_SESSION['nama']."', '".$_SESSION['tempat']."', '".$_SESSION['tgl1']."', '".$_SESSION['bln1']."', '".$_SESSION['thn1']."', '".$_SESSION['alamat']."', '".$_SESSION['pos']."', '".$_SESSION['id']."', '".$_SESSION['demo']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."')");
-	$form4 = mysql_query("insert into formulir4 (id, Nama_Lengkap, Tempat_Lahir, Tanggal_Lahir, Bulan_lahir, Tahun_lahir, Alamat_Rumah, Kode_Pos, No_Identitas, No_Demo, Nama_Pialang, Menerima, Tanggal)
+	$form4 = mysqli_query($connect, "insert into formulir4 (id, Nama_Lengkap, Tempat_Lahir, Tanggal_Lahir, Bulan_lahir, Tahun_lahir, Alamat_Rumah, Kode_Pos, No_Identitas, No_Demo, Nama_Pialang, Menerima, Tanggal)
 	values('".$_SESSION['newid']."', '".$_SESSION['nama']."', '".$_SESSION['tempat']."', '".$_SESSION['tgl1']."', '".$_SESSION['bln1']."', '".$_SESSION['thn1']."', '".$_SESSION['alamat']."', '".$_SESSION['pos']."', '".$_SESSION['id']."', '".$_SESSION['demo']."', '".$_SESSION['pialang']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."')");
 	
 	$sql_form5 = "insert into formulir5 
@@ -487,14 +487,14 @@ if($Nama_Lengkap!='' || $Tempat_Lahir!='' || $thn!='' || $Alamat_Rumah!='' || $K
 	'".$_SESSION['newid']."', '".$_SESSION['nama']."', '".$_SESSION['tempat']."', '".$_SESSION['tgl1']."', '".$_SESSION['bln1']."', '".$_SESSION['thn1']."', '".$_SESSION['id']."', '".$_SESSION['NPWP5']."', '".$_SESSION['jk5']."', '".$_SESSION['namaIS5']."', '".$_SESSION['namaIK5']."', '".$_SESSION['status']."', '".$_SESSION['alamat']."', '".$_SESSION['pos']."', '".$_SESSION['telp5']."', '".$_SESSION['fax5']."', '".$_SESSION['telepon']."', '".$_SESSION['statusR5']."', '".$_SESSION['lainSR5']."', '".$_SESSION['rekening5']."', '".$_SESSION['lainTR5']."', '".$_SESSION['investasi5']."', '".$_SESSION['bidanginv']."', '".$_SESSION['anggotaK5']."', '".$_SESSION['namaAK']."', '".$_SESSION['pengadilan5']."', '".$_SESSION['nama5']."', '".$_SESSION['alamat5']."', '".$_SESSION['kodeP5']."', '".$_SESSION['tl5']."', '".$_SESSION['hub5']."', '".$_SESSION['kerja5']."', '".$_SESSION['lainPKJ5']."', '".$_SESSION['usaha5']."', '".$_SESSION['bidang5']."', '".$_SESSION['jabat5']."', '".$_SESSION['lama5']."', '".$_SESSION['kantor5']."', '".$_SESSION['alamatK5']."', '".$_SESSION['kdpos5']."', '".$_SESSION['notel5']."', '".$_SESSION['fx5']."', '".$_SESSION['hasil5']."', '".$_SESSION['rulok5']."', '".$_SESSION['NJOP5']."', '".$_SESSION['deposit5']."', '".$_SESSION['jml5']."', '".$_SESSION['lain5']."', '".$_SESSION['bank5']."', '".$_SESSION['cab5']."', '".$_SESSION['noAC5']."', '".$_SESSION['tel5']."', '".$_SESSION['JenisR5']."', '".$_SESSION['lainJR15']."', '".$_SESSION['nabank5']."', '".$_SESSION['caba5']."', '".$_SESSION['ac5']."', '".$_SESSION['tlp5']."', '".$_SESSION['reken5']."', '".$_SESSION['lainJR25']."', '".$_SESSION['tagihan']."', '".$_SESSION['skb5']."', '".$_SESSION['skp5']."', '".$_SESSION['rektel']."', '".$_SESSION['kini']."', '".$_SESSION['ktp']."', 
 	'".$_SESSION['radio2']."', '".$_SESSION['t1']."'
 	)";
-	$form5 = mysql_query($sql_form5);
+	$form5 = mysqli_query($connect, $sql_form5);
 	//echo '<pre>';
     //print_r($sql_form5);
     //echo '</pre>';
 	
-	$form601 = mysql_query("insert into formulir6_1 (id, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7, 1_8, 1_9, 1_10, 1_11, 1_12, 1_13, 1_14, 1_15, 1_16, Menerima, Tanggal, No_Identitas)
+	$form601 = mysqli_query($connect, "insert into formulir6_1 (id, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7, 1_8, 1_9, 1_10, 1_11, 1_12, 1_13, 1_14, 1_15, 1_16, Menerima, Tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['1_1']."', '".$_SESSION['1_2']."', '".$_SESSION['1_3']."', '".$_SESSION['1_4']."', '".$_SESSION['1_5']."', '".$_SESSION['1_6']."', '".$_SESSION['1_7']."', '".$_SESSION['1_8']."', '".$_SESSION['1_9']."', '".$_SESSION['1_10']."', '".$_SESSION['1_11']."', '".$_SESSION['1_12']."', '".$_SESSION['1_13']."', '".$_SESSION['1_14']."', '".$_SESSION['1_15']."', '".$_SESSION['1_16']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$form602 = mysql_query("insert into formulir6_2 (id, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7, 1_8, 1_9, 1_10, 1_11, 1_12, 1_13, 1_14, 1_15, Menerima, Tanggal, No_Identitas)
+	$form602 = mysqli_query($connect, "insert into formulir6_2 (id, 1_1, 1_2, 1_3, 1_4, 1_5, 1_6, 1_7, 1_8, 1_9, 1_10, 1_11, 1_12, 1_13, 1_14, 1_15, Menerima, Tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['1_1']."', '".$_SESSION['1_2']."', '".$_SESSION['1_3']."', '".$_SESSION['1_4']."', '".$_SESSION['1_5']."', '".$_SESSION['1_6']."', '".$_SESSION['1_7']."', '".$_SESSION['1_8']."', '".$_SESSION['1_9']."', '".$_SESSION['1_10']."', '".$_SESSION['1_11']."', '".$_SESSION['1_12']."', '".$_SESSION['1_13']."', '".$_SESSION['1_14']."', '".$_SESSION['1_15']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
 	
 	$sql_form701 = "insert into formulir7_1 
@@ -504,26 +504,26 @@ if($Nama_Lengkap!='' || $Tempat_Lahir!='' || $thn!='' || $Alamat_Rumah!='' || $K
 	values(
 	    '".$_SESSION['newid']."', '".$_SESSION['namahari']."', '".$_SESSION['tanggal']."', '".$_SESSION['bulan']."', '".$_SESSION['tahun']."', '".$_SESSION['nama']."', '".$_SESSION['kerja5']."', '".$_SESSION['alamat']."', '".$_SESSION['cek1']."', '".$_SESSION['cek2']."', '".$_SESSION['checkbox16']."', '".$_SESSION['checkbox17']."', '".$_SESSION['checkbox18']."', '".$_SESSION['checkbox19']."', '".$_SESSION['checkbox20']."', '".$_SESSION['checkbox21']."', '".$_SESSION['checkbox22']."', '".$_SESSION['checkbox23']."', '".$_SESSION['checkbox24']."', '".$_SESSION['checkbox25']."', '".$_SESSION['checkbox26']."', '".$_SESSION['checkbox27']."', '".$_SESSION['checkbox28']."', '".$_SESSION['checkbox29']."', '".$_SESSION['checkbox30']."', '".$_SESSION['checkbox31']."', '".$_SESSION['checkbox32']."', '".$_SESSION['checkbox33']."', '".$_SESSION['checkbox34']."', '".$_SESSION['checkbox35']."', '".$_SESSION['checkbox36']."', '".$_SESSION['checkbox37']."', '".$_SESSION['checkbox38']."', '".$_SESSION['checkbox39']."', '".$_SESSION['checkbox40']."', '".$_SESSION['checkbox41']."', '".$_SESSION['checkbox42']."', '".$_SESSION['checkbox43']."', '".$_SESSION['checkbox44']."', '".$_SESSION['checkbox45']."', '".$_SESSION['checkbox46']."', '".$_SESSION['checkbox47']."', '".$_SESSION['checkbox48']."', '".$_SESSION['checkbox49']."', '".$_SESSION['checkbox50']."', '".$_SESSION['checkbox51']."', '".$_SESSION['checkbox52']."', '".$_SESSION['checkbox53']."', '".$_SESSION['checkbox54']."', '".$_SESSION['checkbox55']."', '".$_SESSION['checkbox56']."', '".$_SESSION['checkbox58']."', '".$_SESSION['checkbox59']."', '".$_SESSION['checkbox60']."', '".$_SESSION['checkbox61']."', '".$_SESSION['checkbox62']."', '".$_SESSION['checkbox63']."', '".$_SESSION['checkbox64']."', '".$_SESSION['checkbox65']."', '".$_SESSION['mel1']."', '".$_SESSION['dk']."', '".$_SESSION['checkbox66']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."'
 	    )";
-	$form701 = mysql_query($sql_form701);
+	$form701 = mysqli_query($connect, $sql_form701);
 	    
-	$form702 = mysql_query("insert into formulir7_2 (id, hari1, tanggal1, bulan1, tahun1, nama1, pekerjaan1, alamat1, cekno1, cekno2, nomer1_1, nomer1_2, nomer2_1, nomer2_2, nomer2_3, nomer3_1, nomer3_2, nomer3_3, nomer3_4, nomer3_5, nomer4, nomer5, nomer6, nomer7_1, nomer7_2, nomer7_3, nomer8_1, nomer8_2, nomer9, nomer10, nomer11_1, nomer11_2, nomer11_3, nomer11_4, nomer11_5, nomer12, nomer13, nomer14, nomer15, nomer16_1, nomer16_2, nomer16_3, nomer17, nomer18_1, nomer18_2, nomer18_3, nomer19_1, nomer19_2, nomer19_3, nomer19_4, nomer20, nomer21, nomer22_1, nomer22_2, nomer22_3, lainnya22_3, nomer22_4, nomer23, menerima, tanggal, No_Identitas)
+	$form702 = mysqli_query($connect, "insert into formulir7_2 (id, hari1, tanggal1, bulan1, tahun1, nama1, pekerjaan1, alamat1, cekno1, cekno2, nomer1_1, nomer1_2, nomer2_1, nomer2_2, nomer2_3, nomer3_1, nomer3_2, nomer3_3, nomer3_4, nomer3_5, nomer4, nomer5, nomer6, nomer7_1, nomer7_2, nomer7_3, nomer8_1, nomer8_2, nomer9, nomer10, nomer11_1, nomer11_2, nomer11_3, nomer11_4, nomer11_5, nomer12, nomer13, nomer14, nomer15, nomer16_1, nomer16_2, nomer16_3, nomer17, nomer18_1, nomer18_2, nomer18_3, nomer19_1, nomer19_2, nomer19_3, nomer19_4, nomer20, nomer21, nomer22_1, nomer22_2, nomer22_3, lainnya22_3, nomer22_4, nomer23, menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['namahari']."', '".$_SESSION['tanggal']."', '".$_SESSION['bulan']."', '".$_SESSION['tahun']."', '".$_SESSION['nama']."', '".$_SESSION['kerja5']."', '".$_SESSION['alamat']."', '".$_SESSION['cek3']."', '".$_SESSION['cek4']."', '".$_SESSION['checkbox67']."', '".$_SESSION['checkbox68']."', '".$_SESSION['checkbox69']."', '".$_SESSION['checkbox70']."', '".$_SESSION['checkbox71']."', '".$_SESSION['checkbox72']."', '".$_SESSION['checkbox73']."', '".$_SESSION['checkbox74']."', '".$_SESSION['checkbox75']."', '".$_SESSION['checkbox76']."', '".$_SESSION['checkbox77']."', '".$_SESSION['checkbox78']."', '".$_SESSION['checkbox79']."', '".$_SESSION['checkbox80']."', '".$_SESSION['checkbox81']."', '".$_SESSION['checkbox82']."', '".$_SESSION['checkbox83']."', '".$_SESSION['checkbox84']."', '".$_SESSION['checkbox85']."', '".$_SESSION['checkbox86']."', '".$_SESSION['checkbox87']."', '".$_SESSION['checkbox88']."', '".$_SESSION['checkbox89']."', '".$_SESSION['checkbox90']."', '".$_SESSION['checkbox91']."', '".$_SESSION['checkbox92']."', '".$_SESSION['checkbox93']."', '".$_SESSION['checkbox94']."', '".$_SESSION['checkbox95']."', '".$_SESSION['checkbox96']."', '".$_SESSION['checkbox97']."', '".$_SESSION['checkbox98']."', '".$_SESSION['checkbox99']."', '".$_SESSION['checkbox100']."', '".$_SESSION['checkbox101']."', '".$_SESSION['checkbox102']."', '".$_SESSION['checkbox103']."', '".$_SESSION['checkbox104']."', '".$_SESSION['checkbox105']."', '".$_SESSION['checkbox106']."', '".$_SESSION['checkbox107']."', '".$_SESSION['checkbox108']."', '".$_SESSION['checkbox109']."', '".$_SESSION['checkbox110']."', '".$_SESSION['mel1']."', '".$_SESSION['lain']."', '".$_SESSION['b']."', '".$_SESSION['checkbox111']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
 	
-	$formforexlot = mysql_query("insert into formulirforexlot (id, Menerima, tanggal, No_Identitas)
+	$formforexlot = mysqli_query($connect, "insert into formulirforexlot (id, Menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$formforexreg = mysql_query("insert into formulirforexreg (id, Menerima, tanggal, No_Identitas)
+	$formforexreg = mysqli_query($connect, "insert into formulirforexreg (id, Menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$formgol = mysql_query("insert into formulirgol (id, Menerima, tanggal, No_Identitas)
+	$formgol = mysqli_query($connect, "insert into formulirgol (id, Menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$formkakao = mysql_query("insert into formulirkakao (id, Menerima, tanggal, No_Identitas)
+	$formkakao = mysqli_query($connect, "insert into formulirkakao (id, Menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$formsiidr = mysql_query("insert into formulirsiidr (id, Menerima, tanggal, No_Identitas)
+	$formsiidr = mysqli_query($connect, "insert into formulirsiidr (id, Menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$formsiidrreg = mysql_query("insert into formulirsiidrreg (id, Menerima, tanggal, No_Identitas)
+	$formsiidrreg = mysqli_query($connect, "insert into formulirsiidrreg (id, Menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$formsiusd = mysql_query("insert into formulirsiusd (id, Menerima, tanggal, No_Identitas)
+	$formsiusd = mysqli_query($connect, "insert into formulirsiusd (id, Menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
-	$formsiusdreg = mysql_query("insert into formulirsiusdreg (id, Menerima, tanggal, No_Identitas)
+	$formsiusdreg = mysqli_query($connect, "insert into formulirsiusdreg (id, Menerima, tanggal, No_Identitas)
 	values('".$_SESSION['newid']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."', '".$_SESSION['id']."')");
 	
 	$sql_form9 = "insert into formulir9 (
@@ -531,7 +531,7 @@ if($Nama_Lengkap!='' || $Tempat_Lahir!='' || $thn!='' || $Alamat_Rumah!='' || $K
 	values(
 	    '".$_SESSION['newid']."', '".$_SESSION['nama']."', '".$_SESSION['tempat']."', '".$_SESSION['tgl1']."', '".$_SESSION['bln1']."', '".$_SESSION['thn1']."', '".$_SESSION['alamat']."', '".$_SESSION['pos']."', '".$_SESSION['id']."', '".$_SESSION['demo']."', '".$_SESSION['radio2']."', '".$_SESSION['t1']."'
 	    )";
-	$form9 = mysql_query($sql_form9);
+	$form9 = mysqli_query($connect, $sql_form9);
 	
 	echo "<script>document.location = 'page2.php';</script>";	
 }

@@ -26,7 +26,7 @@ if($jumlah=="Rp")
 	echo "IP:".$ip."<br/>";	
 	echo "Tanggal:".$tgl_str."<br/>";	
 	
-	$sql=mysql_query("insert into withdrawal(nologin, namanasabah, email, bank, nba, jumlah, bukti, IP, date) values('$nologin','$namanasabah','$email','$bank','$nba', '$jumlah $nominalidr','$buktigambar','$ip','$tgl_str')");
+	$sql=mysqli_query($connect, "insert into withdrawal(nologin, namanasabah, email, bank, nba, jumlah, bukti, IP, date) values('$nologin','$namanasabah','$email','$bank','$nba', '$jumlah $nominalidr','$buktigambar','$ip','$tgl_str')");
 	require_once('PHPMailer-master/class.phpmailer.php');
 	$mail = new PHPMailer(true);
 	$mail->IsSMTP();
@@ -67,8 +67,8 @@ if($jumlah=="Rp")
 			echo $e;
 		}
 	
-		$sql=mysql_query("select email from withdrawal where email='$email'");
-		$tangkap=mysql_fetch_array($sql);
+		$sql=mysqli_query($connect, "select email from withdrawal where email='$email'");
+		$tangkap=mysqli_fetch_array($sql);
 		
 		if($tangkap)
 		{
@@ -124,7 +124,7 @@ else if ($jumlah=="USD")
 	echo "Jumlah:".$jumlah."<br/>";
 	echo "Nominal USD:".$nominalusd."<br/>";
 	echo "IP:".$ip."<br/>";
-	$sql=mysql_query("insert into withdrawal(nologin, namanasabah, email, bank, nba, jumlah, bukti, IP, date) values('$nologin','$namanasabah','$email','$bank','$nba', '$jumlah $nominalusd','$buktigambar','$ip','$tgl_str')");
+	$sql=mysqli_query($connect, "insert into withdrawal(nologin, namanasabah, email, bank, nba, jumlah, bukti, IP, date) values('$nologin','$namanasabah','$email','$bank','$nba', '$jumlah $nominalusd','$buktigambar','$ip','$tgl_str')");
 	require_once('PHPMailer-master/class.phpmailer.php');
 	$mail = new PHPMailer(true);	
 	$mail->IsSMTP();
@@ -160,8 +160,8 @@ else if ($jumlah=="USD")
 	} catch (Exception $e) { echo $e;
 	}
 	
-	$sql=mysql_query("select email from deposit where email='$email'");
-	$tangkap=mysql_fetch_array($sql);
+	$sql=mysqli_query($connect, "select email from deposit where email='$email'");
+	$tangkap=mysqli_fetch_array($sql);
 	
 	if($tangkap)
 	{

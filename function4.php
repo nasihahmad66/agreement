@@ -34,7 +34,7 @@ $Tanggal = $_POST['t1'];
 
 $newid=$_SESSION['newid'];
 
-$query = mysql_query("update formulir4 set Nama_Lengkap='$Nama_Lengkap',Tempat_Lahir='$Tempat_Lahir',Tanggal_Lahir='$c3',Bulan_lahir='$d3',Tahun_lahir='$e3',Alamat_Rumah='$Alamat_Rumah',Kode_Pos='$Kode_Pos',No_Demo='$No_Demo',Tempat_Lahir='$Tempat_Lahir',Nama_Pialang='$Nama_Pialang',Menerima='$Menerima',Tanggal='$Tanggal' where id='$newid'") or die (mysql_error());
+$query = mysqli_query($connect, "update formulir4 set Nama_Lengkap='$Nama_Lengkap',Tempat_Lahir='$Tempat_Lahir',Tanggal_Lahir='$c3',Bulan_lahir='$d3',Tahun_lahir='$e3',Alamat_Rumah='$Alamat_Rumah',Kode_Pos='$Kode_Pos',No_Demo='$No_Demo',Tempat_Lahir='$Tempat_Lahir',Nama_Pialang='$Nama_Pialang',Menerima='$Menerima',Tanggal='$Tanggal' where id='$newid'") or die (mysqli_error());
 if ($query){ 
    echo "<script>document.location = 'page5.php';</script>";
 }

@@ -63,7 +63,7 @@ $Tanggal = $_POST['t1'];
 
 $newid=$_SESSION['newid'];
 
-$query = mysql_query("update formulir6_2 set 1_1='$s1_1',1_2='$s1_2',1_3='$s1_3',1_4='$s1_4',1_5='$s1_5',1_6='$s1_6',1_7='$s1_7',1_8='$s1_8',1_9='$s1_9',1_10='$s1_10',1_11='$s1_11',1_12='$s1_12',1_13='$s1_13',1_14='$s1_14',1_15='$s1_15',Menerima='$Menerima',Tanggal='$Tanggal' where id='$newid'") or die (mysql_error());
+$query = mysqli_query($connect, "update formulir6_2 set 1_1='$s1_1',1_2='$s1_2',1_3='$s1_3',1_4='$s1_4',1_5='$s1_5',1_6='$s1_6',1_7='$s1_7',1_8='$s1_8',1_9='$s1_9',1_10='$s1_10',1_11='$s1_11',1_12='$s1_12',1_13='$s1_13',1_14='$s1_14',1_15='$s1_15',Menerima='$Menerima',Tanggal='$Tanggal' where id='$newid'") or die (mysqli_error());
 
 	if ($query) {
 echo "<script>document.location = 'page702.php';</script>";

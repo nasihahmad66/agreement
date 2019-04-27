@@ -195,10 +195,10 @@ $ggg=$_POST['dk'];
 
 	$newid=$_SESSION['newid'];
 	
-	$query = mysql_query("update formulir7_1 set hari1 = '$hari',tanggal1 = '$tanggal1',bulan1 = '$bulan1',tahun1 = '$tahun1',nama1 = '$nama1', cekno1='$centang1', cekno2='$centang2', pekerjaan1 = '$pekerjaan1',alamat1 =  '$alamat1',
+	$query = mysqli_query($connect, "update formulir7_1 set hari1 = '$hari',tanggal1 = '$tanggal1',bulan1 = '$bulan1',tahun1 = '$tahun1',nama1 = '$nama1', cekno1='$centang1', cekno2='$centang2', pekerjaan1 = '$pekerjaan1',alamat1 =  '$alamat1',
 	1_1 = '$s1_1',1_2 = '$s1_2',2_1 = '$s2_1',2_2 = '$s2_2',2_3 = '$s2_3',2_4 = '$s2_4',3_1 = '$s3_1',3_2 = '$s3_2',3_3 = '$s3_3',4_1 = '$s4_1',4_2 = '$s4_2',4_3 = '$s4_3',4_4 = '$s4_4',4_5 = '$s4_5',nomer5= '$s5',nomer6= '$s6',nomer7= '$s7',nomer8= '$s8',9_1 = '$s9_1',9_2 = '$s9_2',9_3 = '$s9_3',10_1 = '$s10_1',10_2 = '$s10_2',nomer11 = '$s11',nomer12 = '$s12',13_1 = '$s13_1',13_2 = '$s13_2',13_3 = '$s13_3',13_4 = '$s13_4',13_5 = '$s13_5',nomer14 = '$s14',nomer15 = '$s15',nomer16 = '$s16',
 	nomer17 = '$s17',18_1 = '$s18_1',18_2 = '$s18_2',18_3 = '$s18_3',nomer19 = '$s19',20_1 = '$s20_1',20_2 = '$s20_2',20_3 = '$s20_3',21_1 = '$s21_1',21_2 = '$s21_2',21_3 = '$s21_3',21_4 = '$s21_4',nomer22 = '$s22',nomer23 = '$s23',24_1 = '$s24_1',24_2 = '$s24_2',
-	24_3melalui = '$s24_3melalui',24_4daftar_kantor = '$s24_4daftar_kantor',nomer25 = '$s25',menerima = '$menerima',tanggal = '$tgl_str' where id='$newid'") or die(mysql_error());
+	24_3melalui = '$s24_3melalui',24_4daftar_kantor = '$s24_4daftar_kantor',nomer25 = '$s25',menerima = '$menerima',tanggal = '$tgl_str' where id='$newid'") or die(mysqli_error());
 }
 
 	if($menerima == 'Ya')

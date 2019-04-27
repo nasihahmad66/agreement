@@ -185,12 +185,12 @@ $tanggal = $_POST['t1'];
 
 $newid=$_SESSION['newid'];
 
-$query = mysql_query("update formulir7_2 set hari1='$namahari',tanggal1='$tanggal1',bulan1='$bulan',tahun1='$tahun',nama1='$nama1',cekno1='$centang3',cekno2='$centang4',pekerjaan1='$pekerjaan1',
+$query = mysqli_query($connect, "update formulir7_2 set hari1='$namahari',tanggal1='$tanggal1',bulan1='$bulan',tahun1='$tahun',nama1='$nama1',cekno1='$centang3',cekno2='$centang4',pekerjaan1='$pekerjaan1',
 alamat1='$alamat1',nomer1_1='$s1_1',nomer1_2='$s1_2',nomer2_1='$s2_1',nomer2_2='$s2_2',nomer2_3='$s2_3',nomer3_1='$s3_1',nomer3_2='$s3_2',nomer3_3='$s3_3',nomer3_4='$s3_4',nomer3_5='$s3_5',nomer4='$s4',nomer5='$s5',
 nomer6='$s6',nomer7_1='$s7_1',nomer7_2='$s7_2',nomer7_3='$s7_3',nomer8_1='$s8_1',nomer8_2='$s8_2',nomer9='$s9',nomer10='$s10',nomer11_1='$s11_1',nomer11_2='$s11_2',nomer11_3='$s11_3',nomer11_4='$s11_4',nomer11_5='$s11_5',
 nomer12='$s12',nomer13='$s13',nomer14='$s14',nomer15='$s15',nomer16_1='$s16_1',nomer16_2='$s16_2',nomer16_3='$s16_3',nomer17='$s17',nomer18_1='$s18_1',nomer18_2='$s18_2',nomer18_3='$s18_3',nomer19_1='$s19_1',
 nomer19_2='$s19_2',nomer19_3='$s19_3',nomer19_4='$s19_4',nomer20='$s20',nomer21='$s21',nomer22_1='$s22_1',nomer22_2='$s22_2',nomer22_3='$s22_3',lainnya22_3='$s22_3lain',nomer22_4='$s22_4',nomer23='$s23',
-menerima='$menerima',tanggal='$tanggal' where id='$newid'") or die (mysql_error());
+menerima='$menerima',tanggal='$tanggal' where id='$newid'") or die (mysqli_error());
 
 
 

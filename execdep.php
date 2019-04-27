@@ -64,7 +64,7 @@ if($jumlah=="Rp")
 		
 		move_uploaded_file($_FILES['bukti']['tmp_name'], $buktigambar);
 		
-		$sql=mysql_query("insert into deposit(nologin, namanasabah, email, setoran, bank, nba, jumlah, bukti,IP,date) values('$nologin','$namanasabah','$email','$setoran','$bank','$nba', '$jumlah $nominalidr','$buktigambar','$ip','$tgl_str')");
+		$sql=mysqli_query($connect, "insert into deposit(nologin, namanasabah, email, setoran, bank, nba, jumlah, bukti,IP,date) values('$nologin','$namanasabah','$email','$setoran','$bank','$nba', '$jumlah $nominalidr','$buktigambar','$ip','$tgl_str')");
 
 		try 
 		{
@@ -105,8 +105,8 @@ if($jumlah=="Rp")
 			echo $e;
 		}
 	
-		$sql=mysql_query("select email from deposit where email='$email'");
-		$tangkap=mysql_fetch_array($sql);
+		$sql=mysqli_query($connect, "select email from deposit where email='$email'");
+		$tangkap=mysqli_fetch_array($sql);
 		
 		if($tangkap)
 		{
@@ -154,7 +154,7 @@ if($jumlah=="Rp")
 
 	else if($att==null)
 	{
-		$sql=mysql_query("insert into deposit(nologin, namanasabah, email, setoran, bank, nba, jumlah, IP, date) values('$nologin','$namanasabah','$email','$setoran','$bank','$nba', '$jumlah $nominalidr','$ip','$tgl_str')");
+		$sql=mysqli_query($connect, "insert into deposit(nologin, namanasabah, email, setoran, bank, nba, jumlah, IP, date) values('$nologin','$namanasabah','$email','$setoran','$bank','$nba', '$jumlah $nominalidr','$ip','$tgl_str')");
 		try 
 		{
 			$mail->Host       = "smtp.gmail.com"; // isi dengan host sesuai keinginan Anda 74.125.129.108
@@ -194,8 +194,8 @@ if($jumlah=="Rp")
 			echo $e;
 		}
 	
-		$sql=mysql_query("select email from deposit where email='$email'");
-		$tangkap=mysql_fetch_array($sql);
+		$sql=mysqli_query($connect, "select email from deposit where email='$email'");
+		$tangkap=mysqli_fetch_array($sql);
 		
 		if($tangkap)
 		{
@@ -259,7 +259,7 @@ else if ($jumlah=="USD")
 		$namafolder="buktideposit/";
 		
 		move_uploaded_file($_FILES['bukti']['tmp_name'], $buktigambar);
-		$sql=mysql_query("insert into deposit(nologin, namanasabah, email, setoran, bank, nba, jumlah, bukti,IP,date) values('$nologin','$namanasabah','$email','$setoran','$bank','$nba', '$jumlah $nominalusd','$buktigambar','$ip','$tgl_str')");
+		$sql=mysqli_query($connect, "insert into deposit(nologin, namanasabah, email, setoran, bank, nba, jumlah, bukti,IP,date) values('$nologin','$namanasabah','$email','$setoran','$bank','$nba', '$jumlah $nominalusd','$buktigambar','$ip','$tgl_str')");
 
 		try 
 		{
@@ -300,8 +300,8 @@ else if ($jumlah=="USD")
 			echo $e;
 		}
 	
-		$sql=mysql_query("select email from deposit where email='$email'");
-		$tangkap=mysql_fetch_array($sql);
+		$sql=mysqli_query($connect, "select email from deposit where email='$email'");
+		$tangkap=mysqli_fetch_array($sql);
 		
 		if($tangkap)
 		{
@@ -349,7 +349,7 @@ else if ($jumlah=="USD")
 
 	else if($att==null)
 	{
-		$sql=mysql_query("insert into deposit(nologin, namanasabah, email, setoran, bank, nba, jumlah, IP,date) values('$nologin','$namanasabah','$email','$setoran','$bank','$nba', '$jumlah $nominalusd','$ip','$tgl_str')");
+		$sql=mysqli_query($connect, "insert into deposit(nologin, namanasabah, email, setoran, bank, nba, jumlah, IP,date) values('$nologin','$namanasabah','$email','$setoran','$bank','$nba', '$jumlah $nominalusd','$ip','$tgl_str')");
 		try 
 		{
 			$mail->Host       = "smtp.gmail.com"; // isi dengan host sesuai keinginan Anda 74.125.129.108
@@ -389,8 +389,8 @@ else if ($jumlah=="USD")
 			echo $e;
 		}
 	
-		$sql=mysql_query("select email from deposit where email='$email'");
-		$tangkap=mysql_fetch_array($sql);
+		$sql=mysqli_query($connect, "select email from deposit where email='$email'");
+		$tangkap=mysqli_fetch_array($sql);
 		
 		if($tangkap)
 		{
