@@ -2,8 +2,8 @@
     require 'config.php';
     session_start();
 
-    $sql = mysql_query('SELECT * FROM managers WHERE id="' . $_SESSION['id'] . '" ');
-    $row = mysql_fetch_array($sql);
+    $sql = mysqli_query($connect,'SELECT * FROM managers WHERE id="' . $_SESSION['id'] . '" ');
+    $row = mysqli_fetch_array($sql);
 
     if ($row['status'] == 1) {
         $_SESSION['aecode'] = $row['kode_ae'];
