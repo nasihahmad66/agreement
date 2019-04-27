@@ -6,8 +6,8 @@ if (isset($_POST['submit'])){
 
 	//Page 1
 	$email = $_POST['email'];
-	$perintah = mysql_query("SELECT * FROM formulir1 where email = '$email'");
-	$row = mysql_fetch_array($perintah);
+	$perintah = mysqli_query($connect, "SELECT * FROM formulir1 where email = '$email'");
+	$row = mysqli_fetch_array($perintah);
 	$kodeae = $row[0];
 	$nama = $row[1];
 	$tempat = $row[2];
@@ -134,8 +134,8 @@ if (isset($_POST['submit'])){
 	
 	//Page 2
 	$email = $_POST['email'];
-	$perintah2 = mysql_query("SELECT * FROM formulir2 where email = '$email'");
-	$row2 = mysql_fetch_array($perintah2);
+	$perintah2 = mysqli_query($connect, "SELECT * FROM formulir2 where email = '$email'");
+	$row2 = mysqli_fetch_array($perintah2);
 	$menerima = $row2[0];
 	$tanggal = $row2[1];
 	echo"
@@ -349,8 +349,8 @@ if (isset($_POST['submit'])){
 	
 	//Page 3
 	$email = $_POST['email'];
-	$perintah3 = mysql_query("SELECT * FROM formulir3 where email = '$email'");
-	$row3 = mysql_fetch_array($perintah3);
+	$perintah3 = mysqli_query($connect, "SELECT * FROM formulir3 where email = '$email'");
+	$row3 = mysqli_fetch_array($perintah3);
 	$nama = $row3[0];
 	$tempat = $row3[1];
 	$tanggal = $row3[2];
@@ -430,8 +430,8 @@ if (isset($_POST['submit'])){
 	
 	//Page 4
 	$email = $_POST['email'];
-	$perintah4 = mysql_query("SELECT * FROM formulir4 where email = '$email'");
-	$row4 = mysql_fetch_array($perintah4);
+	$perintah4 = mysqli_query($connect, "SELECT * FROM formulir4 where email = '$email'");
+	$row4 = mysqli_fetch_array($perintah4);
 	$nama = $row4[0];
 	$tempat = $row4[1];
 	$tanggal = $row4[2];
@@ -512,8 +512,8 @@ if (isset($_POST['submit'])){
 	
 	//Page 5
 	$email = $_POST['email'];
-	$perintah5 = mysql_query("SELECT * FROM formulir5 where email = '$email'");
-	$row5 = mysql_fetch_array($perintah5);
+	$perintah5 = mysqli_query($connect, "SELECT * FROM formulir5 where email = '$email'");
+	$row5 = mysqli_fetch_array($perintah5);
 	$kodenasabah = $row5[0];
 	$nama1 = $row5[1];
 	$tempat5 = $row5[2];
@@ -970,8 +970,8 @@ if (isset($_POST['submit'])){
 	if($_SESSION['page1'] == "IDR_50.000.000_Kontrak_Berjangka_Emas GOL,_GOL100,_GOL250" || $_SESSION['page1'] == "IDR_50.000.000_Kontrak_Berjangka_Kakao")
 		{
 	$email = $_POST['email'];
-	$perintah6_1 = mysql_query("SELECT * FROM formulir6_1 where email = '$email'");
-	$row6_1 = mysql_fetch_array($perintah6_1);
+	$perintah6_1 = mysqli_query($connect, "SELECT * FROM formulir6_1 where email = '$email'");
+	$row6_1 = mysqli_fetch_array($perintah6_1);
 	$s1_1 = $row6_1[0];
 	$s1_2 = $row6_1[1];
 	$s1_3 = $row6_1[2];
@@ -1145,8 +1145,8 @@ if (isset($_POST['submit'])){
 	//page 602
 		else if($_SESSION['page1'] == "IDR_5.000.000_Kontrak_Derivative_Forex_dan_Loco_London" || $_SESSION['page1'] == "IDR_5.000.000_Kontrak_Derivative_Stock_Indeks" || $_SESSION['page1'] == "USD_500_Kontrak_Deritvative_Forex_dan_Loco_London" || $_SESSION['page1'] == "USD_500_Kontrak_Derivative_Stock_Indeks"){
 	$email = $_POST['email'];
-	$perintah6_2 = mysql_query("SELECT * FROM formulir6_2 where email = '$email'");
-	$row6_2 = mysql_fetch_array($perintah6_2);
+	$perintah6_2 = mysqli_query($connect, "SELECT * FROM formulir6_2 where email = '$email'");
+	$row6_2 = mysqli_fetch_array($perintah6_2);
 	$s1_1 = $row6_2[0];
 	$s1_2 = $row6_2[1];
 	$s1_3 = $row6_2[2];
@@ -1325,8 +1325,8 @@ if (isset($_POST['submit'])){
 		{
 	
 	$email = $_POST['email'];
-	$perintah7_1 = mysql_query("SELECT * FROM formulir7_1 where email = '$email'");
-	$row7_1 = mysql_fetch_array($perintah7_1);
+	$perintah7_1 = mysqli_query($connect, "SELECT * FROM formulir7_1 where email = '$email'");
+	$row7_1 = mysqli_fetch_array($perintah7_1);
 		$hari = $row7_1[0];
 		$tanggal1 = $row7_1[1];
 		$bulan1 = $row7_1[2];
@@ -2032,8 +2032,8 @@ if (isset($_POST['submit'])){
 	//page 702
 		else if($_SESSION['page1'] == "IDR_5.000.000_Kontrak_Derivative_Forex_dan_Loco_London" || $_SESSION['page1'] == "IDR_5.000.000_Kontrak_Derivative_Stock_Indeks" || $_SESSION['page1'] == "USD_500_Kontrak_Deritvative_Forex_dan_Loco_London" || $_SESSION['page1'] == "USD_500_Kontrak_Derivative_Stock_Indeks"){
 	$email = $_POST['email'];
-	$perintah7_2 = mysql_query("SELECT * FROM formulir7_2 where email = '$email'");
-	$row7_2 = mysql_fetch_array($perintah7_2);
+	$perintah7_2 = mysqli_query($connect, "SELECT * FROM formulir7_2 where email = '$email'");
+	$row7_2 = mysqli_fetch_array($perintah7_2);
 	$namahari = $row7_2[0];
 	$tanggal1=$row7_2[1];
 	$bulan=$row7_2[2];
@@ -2694,8 +2694,8 @@ if (isset($_POST['submit'])){
 			if($_SESSION['page1'] == 'IDR_50.000.000_Kontrak_Berjangka_Emas GOL,_GOL100,_GOL250')
 			{
 	$email = $_POST['email'];
-	$perintah8_1 = mysql_query("SELECT * FROM formulir8_3 where email = '$email'");
-	$row8_1 = mysql_fetch_array($perintah8_1);
+	$perintah8_1 = mysqli_query($connect, "SELECT * FROM formulir8_3 where email = '$email'");
+	$row8_1 = mysqli_fetch_array($perintah8_1);
 	$menerima = $row8_1[0];
 	$tanggal = $row8_1[1];
 	echo "<p align='right'>Lampiran 2 Peraturan Kepala Badan  Pengawas <br />
@@ -2933,8 +2933,8 @@ if (isset($_POST['submit'])){
 			else if($_SESSION['page1'] == 'IDR_50.000.000_Kontrak_Berjangka_Kakao')
 			{
 	$email = $_POST['email'];
-	$perintah8_2 = mysql_query("SELECT * FROM formulir8_4 where email = '$email'");
-	$row8_2 = mysql_fetch_array($perintah8_2);
+	$perintah8_2 = mysqli_query($connect, "SELECT * FROM formulir8_4 where email = '$email'");
+	$row8_2 = mysqli_fetch_array($perintah8_2);
 	$menerima = $row8_2[0];
 	$tanggal = $row8_2[1];
 	echo "<p align='right'>Lampiran 2 Peraturan Kepala Badan Pengawas<br> 
@@ -3086,8 +3086,8 @@ if (isset($_POST['submit'])){
 			else if($_SESSION['page1'] == "IDR_5.000.000_Kontrak_Derivative_Forex_dan_Loco_London" || $_SESSION['page1'] == "USD_500_Kontrak_Deritvative_Forex_dan_Loco_London"){
 	
 	$email = $_POST['email'];
-	$perintah8_3 = mysql_query("SELECT * FROM formulir8_2 where email = '$email'");
-	$row8_3 = mysql_fetch_array($perintah8_3);
+	$perintah8_3 = mysqli_query($connect, "SELECT * FROM formulir8_2 where email = '$email'");
+	$row8_3 = mysqli_fetch_array($perintah8_3);
 	$menerima = $row8_3[0];
 	$tanggal = $row8_3[1];
 	echo "
@@ -3461,8 +3461,8 @@ if (isset($_POST['submit'])){
 		else if($_SESSION['page1'] == "IDR_5.000.000_Kontrak_Derivative_Stock_Indeks"){
 	
 	$email = $_POST['email'];
-	$perintah8_4 = mysql_query("SELECT * FROM formulir8_5 where email = '$email'");
-	$row8_4 = mysql_fetch_array($perintah8_4);
+	$perintah8_4 = mysqli_query($connect, "SELECT * FROM formulir8_5 where email = '$email'");
+	$row8_4 = mysqli_fetch_array($perintah8_4);
 	$menerima = $row8_4[0];
 	$tanggal = $row8_4[1];
 	echo "<p align='right'>
@@ -3775,8 +3775,8 @@ if (isset($_POST['submit'])){
 	//Page 8_5		
 			else if($_SESSION['page1'] == 'USD_500_Kontrak_Derivative_Stock_Indeks'){
 	$email = $_POST['email'];
-	$perintah8_5 = mysql_query("SELECT * FROM formulir8_7 where email = '$email'");
-	$row8_5 = mysql_fetch_array($perintah8_5);
+	$perintah8_5 = mysqli_query($connect, "SELECT * FROM formulir8_7 where email = '$email'");
+	$row8_5 = mysqli_fetch_array($perintah8_5);
 	$menerima = $row8_5[0];
 	$tanggal = $row8_5[1];
 	echo "

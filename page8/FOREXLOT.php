@@ -7,8 +7,8 @@
 include '../config.php';
 session_start();
 
-$sql = mysql_query('select * from formulir1 where No_Identitas=' . $_SESSION['id'] . '');
-$hasil = mysql_fetch_array($sql);
+$sql = mysqli_query($connect, 'select * from formulir1 where No_Identitas=' . $_SESSION['id'] . '');
+$hasil = mysqli_fetch_array($sql);
 ?>
 <script type="text/javascript" src="../jquery-1.11.0.js"></script>
 <script type='text/javascript' >

@@ -11,7 +11,7 @@ $th = $_POST['th7'];
 $tgl = new datetime('Asia/Jakarta');
 $tanggal = $tgl->format('d-m-Y');
 $newid = $_SESSION['newid'];
-$query = mysql_query("update formulirforexreg set Menerima = '$Menerima',tanggal = '$tanggal' where id='$newid'") or die(mysql_error());
+$query = mysqli_query($connect, "update formulirforexreg set Menerima = '$Menerima',tanggal = '$tanggal' where id='$newid'") or die(mysql_error());
 	
 if ($query) {
 echo "<script>document.location = 'page9.php';</script>";
