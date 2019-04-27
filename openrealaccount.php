@@ -81,7 +81,7 @@ return false//disable key press
 										</td>
 									</tr>
 									<tr>
-										<td align="center" width="40%" colspan="3"><font color="red"> *</font> Belum punya nomor account demo? <a href="/index.php/how-to-trading/demo-account">klik disini</a></td>
+										<td align="center" width="40%" colspan="3"><font color="red"> *</font> Belum punya nomor account demo? <a href="/index.php/more-page/download-page">klik disini</a></td>
 									</tr>
 								</table>
 							
