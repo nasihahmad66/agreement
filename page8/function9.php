@@ -46,17 +46,17 @@ $tgl_verifikasi = '';
 $tgl_add_pialang = '';
 $note = '';
 
-$query = mysql_query("update formulir9 set nama_lengkap = '$nama_lengkap',tempat_lahir =  '$tempat_lahir',tanggal_lahir = '$c3',bulan_lahir = '$d3',tahun_lahir = '$e3',alamat_rumah = '$alamat_rumah',kode_pos = '$kode_pos',no_acc = 0,pernyataan =  '$pernyataan',terima_tanggal = '$terima_tanggal' where id='$newid'") or die(mysql_error());
+$query = mysqli_query($connect, "update formulir9 set nama_lengkap = '$nama_lengkap',tempat_lahir =  '$tempat_lahir',tanggal_lahir = '$c3',bulan_lahir = '$d3',tahun_lahir = '$e3',alamat_rumah = '$alamat_rumah',kode_pos = '$kode_pos',no_acc = 0,pernyataan =  '$pernyataan',terima_tanggal = '$terima_tanggal' where id='$newid'") or die(mysql_error());
 
 $sql_mode = "SET sql_mode = ''";
-$mode = mysql_query($sql_mode);
+$mode = mysqli_query($connect, $sql_mode);
 
 $sql_pialang = "insert into namaid (
 id, NAMA,jk_nasabah, no_identitas, alamat_rumah, no_acc, Wakil_Pialang, status_pialang, status_verifikasi, tanggal_verifikasi, tanggal_add_pialang, note, ip_address) 
 values (
     '$newid','$nama_lengkap','$jk','$no_identitas','$alamat_rumah','$no_acc', '$wakil_pialang', 'Belum Selesai','Belum Terverifikasi', '$tgl_verifikasi', '$tgl_add_pialang', '$note', '".$_SESSION['ip']."'
     )";
-$pialang = mysql_query($sql_pialang);
+$pialang = mysqli_query($connect, $sql_pialang);
 
 if($pernyataan == "Ya")
 {
