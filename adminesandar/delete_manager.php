@@ -9,7 +9,7 @@
 
 	$sql = "DELETE FROM managers WHERE id='".$id."'";
 
-	$row = mysql_query( $sql, $connect );
+	$row = mysqli_query($connect, $sql);
 	
 	if (!$row) {
 
@@ -21,5 +21,5 @@
 	$_SESSION['alert'] = 'Sukses. Data manager sudah terhapus.';
 	header("Location: data_manager.php");
 
-	mysql_close($connect);
+	mysqli_close($connect);
 ?>

@@ -13,7 +13,7 @@ if(isset ($_SESSION['namauser']))
 		$tanggal = $tgl->format('Y-m-d H:i:s');
 		//echo $tanggal;
 		
-		$query = mysql_query("update namaid set status_verifikasi='$verifikasi', Wakil_Pialang='$nama_lengkap', tanggal_verifikasi='$tanggal' where ID='$id_pialang'") or die (mysql_error());
+		$query = mysqli_query($connect, "update namaid set status_verifikasi='$verifikasi', Wakil_Pialang='$nama_lengkap', tanggal_verifikasi='$tanggal' where ID='$id_pialang'") or die (mysqli_error());
 		if ($query) {
 			if($verifikasi=='Telah Terverifikasi'){
 				echo "<script>document.location = 'file_verifikasi.php';</script>";

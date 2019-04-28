@@ -19,8 +19,8 @@
 
 		$sql_kode_ae = "SELECT * FROM managers WHERE kode_ae='".$kode."'";
 
-		$row = mysql_query( $sql_kode_ae, $connect );
-		$result = mysql_num_rows($row);
+		$row = mysqli_query($connect, $sql_kode_ae );
+		$result = mysqli_num_rows($row);
 	
 		if ($result > 0) {
 
@@ -30,7 +30,7 @@
 		} else {
 		   	$sql = "INSERT INTO managers (nama, kode_ae, link, shorten, status, created_date, modified_date) VALUES ('$nama', '$kode', '$link', '$shorten', '1', '$date', '$date')";
 		
-			$retval = mysql_query( $sql, $connect );
+			$retval = mysqli_query( $connect, $sql);
 
 			if(! $retval )
 			{
@@ -40,7 +40,7 @@
 			$_SESSION['alert'] = 'Sukses. Data manager sudah tersimpan.';
 			header("Location: data_manager.php");
 
-			mysql_close($connect);
+			mysqli_close($connect);
 		}
 
 	} 

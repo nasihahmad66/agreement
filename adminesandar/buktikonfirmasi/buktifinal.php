@@ -3,73 +3,72 @@ require_once('tcpdf/tcpdf.php');
 ob_start();
 $pdf = new TCPDF('', PDF_UNIT, 'A4', true, 'UTF-8', false);
 include('../config.php');
-session_start();
 $id=$_SESSION['newid'];
 
 
 /*mysql query*/
-$sql=mysql_query("select * from formulir1 where id='$id'");
-$form1=mysql_fetch_array($sql);
+$sql=mysqli_query($connect,"select * from formulir1 where id='$id'");
+$form1=mysqli_fetch_array($sql);
 
-$sql2=mysql_query("select * from formulir2 where id='$id'");
-$form2=mysql_fetch_array($sql2);
+$sql2=mysqli_query($connect,"select * from formulir2 where id='$id'");
+$form2=mysqli_fetch_array($sql2);
 
-$sql3=mysql_query("select * from formulir3 where id='$id'");
-$form3=mysql_fetch_array($sql3);
+$sql3=mysqli_query($connect,"select * from formulir3 where id='$id'");
+$form3=mysqli_fetch_array($sql3);
 
-$sql4=mysql_query("select * from formulir4 where id='$id'");
-$form4=mysql_fetch_array($sql4);
+$sql4=mysqli_query($connect,"select * from formulir4 where id='$id'");
+$form4=mysqli_fetch_array($sql4);
 
-$sql5=mysql_query("select * from formulir5 where id='$id'");
-$form5=mysql_fetch_array($sql5);
+$sql5=mysqli_query($connect,"select * from formulir5 where id='$id'");
+$form5=mysqli_fetch_array($sql5);
 
-$sql601=mysql_query("select * from formulir6_1 where id='$id'");
-$form601=mysql_fetch_array($sql601);
+$sql601=mysqli_query($connect,"select * from formulir6_1 where id='$id'");
+$form601=mysqli_fetch_array($sql601);
 
-$sql602=mysql_query("select * from formulir6_2 where id='$id'");
-$form602=mysql_fetch_array($sql602);
+$sql602=mysqli_query($connect,"select * from formulir6_2 where id='$id'");
+$form602=mysqli_fetch_array($sql602);
 
-$sql701=mysql_query("select * from formulir7_1 where id='$id'");
-$form701=mysql_fetch_array($sql701);
+$sql701=mysqli_query($connect,"select * from formulir7_1 where id='$id'");
+$form701=mysqli_fetch_array($sql701);
 
-$sql702=mysql_query("select * from formulir7_2 where id='$id'");
-$form702=mysql_fetch_array($sql702);
+$sql702=mysqli_query($connect,"select * from formulir7_2 where id='$id'");
+$form702=mysqli_fetch_array($sql702);
 
-$sqlgol=mysql_query("select * from formulirgol where id='$id'");
-$formgol=mysql_fetch_array($sqlgol);
+$sqlgol=mysqli_query($connect,"select * from formulirgol where id='$id'");
+$formgol=mysqli_fetch_array($sqlgol);
 
-$sqlkakao=mysql_query("select * from formulirkakao where id='$id'");
-$formkakao=mysql_fetch_array($sqlkakao);
+$sqlkakao=mysqli_query($connect,"select * from formulirkakao where id='$id'");
+$formkakao=mysqli_fetch_array($sqlkakao);
 
-$sql803=mysql_query("select * from formulirforexlot where id='$id'");
-$form803=mysql_fetch_array($sql803);
+$sql803=mysqli_query($connect,"select * from formulirforexlot where id='$id'");
+$form803=mysqli_fetch_array($sql803);
 
-$sql804=mysql_query("select * from formulirforexreg where id='$id'");
-$form804=mysql_fetch_array($sql804);
+$sql804=mysqli_query($connect,"select * from formulirforexreg where id='$id'");
+$form804=mysqli_fetch_array($sql804);
 
-$sql805=mysql_query("select * from formulirsiusd where id='$id'");
-$form805=mysql_fetch_array($sql805);
+$sql805=mysqli_query($connect,"select * from formulirsiusd where id='$id'");
+$form805=mysqli_fetch_array($sql805);
 
-$sql806=mysql_query("select * from formulirsiusdreg where id='$id'");
-$form806=mysql_fetch_array($sql806);
+$sql806=mysqli_query($connect,"select * from formulirsiusdreg where id='$id'");
+$form806=mysqli_fetch_array($sql806);
 
-$sql807=mysql_query("select * from formulirsiidr where id='$id'");
-$form807=mysql_fetch_array($sql807);
+$sql807=mysqli_query($connect,"select * from formulirsiidr where id='$id'");
+$form807=mysqli_fetch_array($sql807);
 
-$sql808=mysql_query("select * from formulirsiidrreg where id='$id'");
-$form808=mysql_fetch_array($sql808);
+$sql808=mysqli_query($connect,"select * from formulirsiidrreg where id='$id'");
+$form808=mysqli_fetch_array($sql808);
 
-$sql9=mysql_query("select * from formulir9 where id='$id'");
-$form9=mysql_fetch_array($sql9);
+$sql9=mysqli_query($connect,"select * from formulir9 where id='$id'");
+$form9=mysqli_fetch_array($sql9);
 
-$sqlnamaid=mysql_query("select * from namaid where id='$id'");
-$namaid=mysql_fetch_array($sqlnamaid);
+$sqlnamaid=mysqli_query($connect,"select * from namaid where id='$id'");
+$namaid=mysqli_fetch_array($sqlnamaid);
 
-$sqlnamaid701=mysql_query("select * from namaid where id='$id'");
-$formnamaid701=mysql_fetch_array($sqlnamaid701);
+$sqlnamaid701=mysqli_query($connect,"select * from namaid where id='$id'");
+$formnamaid701=mysqli_fetch_array($sqlnamaid701);
 
-$sqlnamaid702=mysql_query("select * from namaid where id='$id'");
-$formnamaid702=mysql_fetch_array($sqlnamaid702);
+$sqlnamaid702=mysqli_query($connect,"select * from namaid where id='$id'");
+$formnamaid702=mysqli_fetch_array($sqlnamaid702);
 
 
 

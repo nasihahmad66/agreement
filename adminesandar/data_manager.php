@@ -44,7 +44,7 @@ if(isset ($_SESSION['namauser']))
                                 <?php
                                     $sql = "SELECT * FROM managers ORDER BY status ASC";
 
-                                    $retval = mysql_query( $sql, $connect );
+                                    $retval = mysqli_query( $connect, $sql);
                                 ?>
                             	<table class="table table-bordered">
                             		<thead>
@@ -60,7 +60,7 @@ if(isset ($_SESSION['namauser']))
                             		<tbody>
                                         <?php
                                             $no = 1;
-                                            while($row = mysql_fetch_assoc($retval)){
+                                            while($row = mysqli_fetch_assoc($retval)){
                                         ?>
                                             <tr>
                                                 <td><?php echo $no;?></td>

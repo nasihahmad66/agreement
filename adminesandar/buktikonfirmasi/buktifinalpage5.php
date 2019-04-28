@@ -695,9 +695,9 @@ $pdf->Ln(5);
 //$img4=("$skp5");
 //$img5=("$kini5");
 //$img6=("$KTP5");
-
-$sqlpage5=mysql_query("select * from formulir5 where id='$id'");
-$lihatgambar=mysql_fetch_array($sqlpage5);
+include('../config.php');
+$sqlpage5=mysqli_query($connect,"select * from formulir5 where id='$id'");
+$lihatgambar=mysqli_fetch_array($sqlpage5);
 
 $lihat1=substr($lihatgambar['Rekening_Tagihan'], -4);
 $lihat2=substr($lihatgambar['Rekening_Telp'], -4);

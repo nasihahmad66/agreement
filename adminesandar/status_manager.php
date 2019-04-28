@@ -11,16 +11,16 @@
 
 		$sql = 'UPDATE managers SET status="'.$status.'" WHERE id="'.$id.'"';
 		
-		$retval = mysql_query($sql, $connect);
+		$retval = mysqli_query($connect, $sql);
 
 		if(! $retval )
 		{
-			die('Could not enter data: ' . mysql_error());
+			die('Could not enter data: ' . mysqli_error());
 		}
 
 		$_SESSION['alert'] = 'Sukses. Status manager sudah terupdate.';
 		header("Location: data_manager.php");
 
-		mysql_close($connect);
+		mysqli_close($connect);
 
 ?>

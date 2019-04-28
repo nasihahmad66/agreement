@@ -9,7 +9,7 @@ echo $note;
 
 if($_POST['idnas']!= null && $_POST['note']!= null)
 {
-$sql=mysql_query("UPDATE `namaid` SET `note`= '$note' WHERE id='$idnas'");
+$sql=mysqli_query($connect, "UPDATE `namaid` SET `note`= '$note' WHERE id='$idnas'");
 echo "<script>document.location = 'history.php';</script>";
 }
 else

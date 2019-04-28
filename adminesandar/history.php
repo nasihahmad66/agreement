@@ -38,13 +38,13 @@ if(isset ($_SESSION['namauser']))
 										$start=0;
 										$page=1;
 									}
-									$file=mysql_query("select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
-									$jmlhtotal=mysql_num_rows($file)/20;
+									$file=mysqli_query($connect,"select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
+									$jmlhtotal=mysqli_num_rows($file)/20;
 									
 									$sql="select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai' order by id ".$order." limit $start,20";
-									$query=mysql_query($sql);
+									$query=mysqli_query($connect,$sql);
 									$no=1;
-									$jum=mysql_query("select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
+									$jum=mysqli_query($connect,"select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
 									echo'<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead> 
 									    <tr>
@@ -64,13 +64,13 @@ if(isset ($_SESSION['namauser']))
                                         </tr>
                                     </thead>';
                                     
-									while ($hasil=mysql_fetch_array($query))
+									while ($hasil=mysqli_fetch_array($query))
 									{
 										
 										if($hasil['status_verifikasi']=='Telah Terverifikasi' && $hasil['status_pialang']=='Selesai')
 										{	$id_pialang="KONF-".$hasil['id']."-".$hasil['NAMA'].".pdf";
 											$veri="VERI-".$hasil['id']."-".$hasil['NAMA'].".pdf";
-											$nomer = count($hasil['id']);
+											$nomer = count($hasil);
 											echo "<tbody>
 											<tr class='odd gradeX'>
 												<td>".$hasil['id']."-".$hasil['NAMA']."</a></td>
@@ -115,7 +115,8 @@ if(isset ($_SESSION['namauser']))
 									echo '</tr></table>';
 								?>
 								<p>Jumlah Data Agreement Yang Telah Selesai = <?php
-								echo mysql_result($jum, 0, "jmlh");
+								$row = mysqli_fetch_array($jum,MYSQLI_NUM);
+								echo ceil($row[0]);
 								?></p></font></font>
 								
                             </div>

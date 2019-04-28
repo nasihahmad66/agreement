@@ -1,8 +1,7 @@
 <?php 
-session_start();
 include("config.php");
 //require_once('session_header.php');
-if(isset ($_SESSION['namauser']))
+if(isset($_SESSION['namauser']))
 {
 	if($_SESSION['namauser']!=null)
 	{

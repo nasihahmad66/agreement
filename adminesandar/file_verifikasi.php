@@ -38,10 +38,10 @@ if(isset ($_SESSION['namauser']))
 									}
 									
 									if(isset($_GET['page']))	$page=($_GET['page']-1)*20;
-									$file=mysql_query("select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");
-									$jmlhtotal=mysql_num_rows($file)/20;
+									$file=mysqli_query($connect,"select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");
+									$jmlhtotal=mysqli_num_rows($file)/20;
 									$sql="select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai' order by status_verifikasi desc limit $page,20";
-									$query=mysql_query($sql);
+									$query=mysqli_query($connect,$sql);
 									$no=1;
 									echo'<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
@@ -58,7 +58,7 @@ if(isset ($_SESSION['namauser']))
                                         </tr>
                                     </thead>';
                                     
-									while ($hasil=mysql_fetch_array($query))
+									while ($hasil=mysqli_fetch_array($query))
 									{	
 										$verifikasi=$hasil['status_verifikasi'];
 											echo "<tbody>
@@ -102,9 +102,10 @@ if(isset ($_SESSION['namauser']))
 									echo '<td>&nbsp &nbsp <a href="file_verifikasi.php?page='.($jmlhtotal).'">&raquo; LAST</a></td>';
 									
 									echo '</tr></table>';
-								$jum=mysql_query("select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");?>
+								$jum=mysqli_query($connect,"select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");?>
 								<p>Jumlah File Verifikasi = <?php
-								echo mysql_result($jum, 0, "jmlh");
+								$row = mysqli_fetch_array($jum,MYSQLI_NUM);
+								echo ceil($row[0]);
 								?></p></font></font>
 								
                             </div>

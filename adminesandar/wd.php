@@ -36,10 +36,10 @@ if(isset ($_SESSION['namauser']))
 										$start=0;
 										$page=1;
 									}
-									$file=mysql_query("select * from withdrawal ORDER BY tanggal DESC");
-									$jmlhtotal=ceil(mysql_num_rows($file)/100);
+									$file=mysqli_query($connect,"select * from withdrawal ORDER BY tanggal DESC");
+									$jmlhtotal=ceil(mysqli_num_rows($file)/100);
 									$sql="select * from withdrawal ORDER BY tanggal DESC limit $start,100";
-									$query=mysql_query($sql);
+									$query=mysqli_query($connect, $sql);
 									$no=1;
 									echo'<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 									<thead>
@@ -55,9 +55,10 @@ if(isset ($_SESSION['namauser']))
                                     </thead>';
                                     
 									//print_r($hasil=mysql_fetch_array($file));
-									while ($hasil=mysql_fetch_array($query))
+									while ($hasil=mysqli_fetch_array($query))
 									{	
-										$verifikasi=$hasil['status_verifikasi'];
+										// echo json_encode($hasil);
+										// $verifikasi=$hasil['status_verifikasi'];
 										echo "<tbody>
 										<tr class='odd gradeX'>
 											<td>".$hasil['nama_nasabah']."</td>";
@@ -91,7 +92,7 @@ if(isset ($_SESSION['namauser']))
 									}
 									echo '<td>&nbsp &nbsp <a href="wd.php?page='.($jmlhtotal).'">&raquo; LAST</a></td>';
 									echo '</tr></table>';
-								$jum=mysql_query("select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");?>
+								$jum=mysqli_query($connect, "select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");?>
 								</font></font>
 								
                             </div>

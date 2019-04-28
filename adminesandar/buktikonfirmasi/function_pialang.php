@@ -16,7 +16,7 @@ if(isset ($_SESSION['namauser']))
 		
 		if($_SESSION['hak_akses']=='Wakil Pialang')
 		{
-			$query = mysql_query("update namaid set no_acc='$ACC', status_pialang='Selesai', tanggal_add_pialang='$tanggal' where ID='$id_pialang'");
+			$query = mysqli_query($connect,"update namaid set no_acc='$ACC', status_pialang='Selesai', tanggal_add_pialang='$tanggal' where ID='$id_pialang'");
 			include 'bukti.php';
 			require 'buktifinal.php';
 			if($query)
@@ -27,7 +27,7 @@ if(isset ($_SESSION['namauser']))
 		}
 		else if($_SESSION['hak_akses']=='Co-Wakil Pialang')
 		{
-			$query = mysql_query("update namaid set no_acc='$ACC', status_pialang='Selesai', tanggal_add_pialang='$tanggal' where ID='$id_pialang'");
+			$query = mysqli_query($connect,"update namaid set no_acc='$ACC', status_pialang='Selesai', tanggal_add_pialang='$tanggal' where ID='$id_pialang'");
 			include 'bukti.php';
 			require 'buktifinal.php';
 			if($query)
@@ -38,7 +38,7 @@ if(isset ($_SESSION['namauser']))
 		}
 		else
 		{
-			$query = mysql_query("update namaid set no_acc='$ACC', Wakil_Pialang='$Wakil_Pialang',status_pialang='Selesai', tanggal_add_pialang='$tanggal' where ID='$id_pialang'");
+			$query = mysqli_query($connect,"update namaid set no_acc='$ACC', Wakil_Pialang='$Wakil_Pialang',status_pialang='Selesai', tanggal_add_pialang='$tanggal' where ID='$id_pialang'");
 			include 'bukti.php';
 			require 'buktifinal.php';
 			if($query)

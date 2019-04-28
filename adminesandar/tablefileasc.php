@@ -12,13 +12,13 @@ else if($sort_arr=='DESC')
 }
 $page=0;
 if(isset($_GET['page']))	$page=($_GET['page']-1)*20;
-$file=mysql_query("select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
-$jmlhtotal=mysql_num_rows($file)/20;
+$file=mysqli_query($connect, "select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
+$jmlhtotal=mysqli_num_rows($file)/20;
 									
 $sql="select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai' order by id ".$q." limit $page,20";
-$query=mysql_query($sql);
+$query=mysqli_query($connect, $sql);
 $no=1;
-$jum=mysql_query("select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
+$jum=mysqli_query($connect, "select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
 echo'<table class="table table-striped table-bordered table-hover" id="dataTables-example">
 <thead> 
 	<tr>
@@ -33,7 +33,7 @@ echo'<table class="table table-striped table-bordered table-hover" id="dataTable
 		<th>Note</th>
 	</tr>
 </thead>';
-while ($hasil=mysql_fetch_array($query))
+while ($hasil=mysqli_fetch_array($query))
 {
 	if($hasil['status_verifikasi']=='Telah Terverifikasi' && $hasil['status_pialang']=='Selesai')
 	{	$id_pialang="KONF-".$hasil['id']."-".$hasil['NAMA'].".pdf";
@@ -65,5 +65,5 @@ for($i=0;$i<$jmlhtotal;$i++)
 echo '</tr></table>';
 ?>
 <p>Jumlah Data Agreement Yang Telah Selesai = <?php
-echo mysql_result($jum, 0, "jmlh");
+echo mysqli_result($jum, 0, "jmlh");
 ?></p>

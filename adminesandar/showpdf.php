@@ -11,8 +11,8 @@ if(isset ($_SESSION['namauser']))
 	include "config.php";
 	$id=$_GET['id'];
 	$sql="select * from namaid where id='$id'";
-	$hasil=mysql_query($sql);
-	$nama=mysql_fetch_array($hasil);
+	$hasil=mysqli_query($connect, $sql);
+	$nama=mysqli_fetch_array($hasil);
 	$gabung = "".$nama['id']."-".$nama['NAMA'];
 ?>
 <script type="text/javascript" src="jquery-1.11.0.js"></script>

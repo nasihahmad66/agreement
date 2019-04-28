@@ -31,8 +31,8 @@ if(isset ($_SESSION['namauser']))
             <div class="row">
                 <div class="col-lg-12">
                 	<?php
-                		$sql = mysql_query("SELECT * FROM managers WHERE id='".$_GET['id']."'");
-                		$row = mysql_fetch_array($sql);
+                		$sql = mysqli_query($connect,"SELECT * FROM managers WHERE id='".$_GET['id']."'");
+                		$row = mysqli_fetch_array($sql);
                 	?>
                 	<form action="edit_form_manager.php" method="post">
 						  <div class="form-group">

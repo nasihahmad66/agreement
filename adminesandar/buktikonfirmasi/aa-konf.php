@@ -11,8 +11,8 @@ include "../config.php";
 session_start();
 $id=$_GET['newid'];
 $sql="select * from namaid where id='$id'";
-$query=mysql_query($sql);
-$hasil1=mysql_fetch_array($query);
+$query=mysqli_query($connnect,$sql);
+$hasil1=mysqli_fetch_array($query);
 
 if($hasil1['jk_nasabah']=='Laki-Laki')
 {

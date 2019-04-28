@@ -12,8 +12,8 @@ if(isset ($_SESSION['namauser']))
 	$id=$_GET['id'];
         $_SESSION['id_nasabah1']=$id;
 	$sql="select * from namaid where id='$id'";
-	$hasil=mysql_query($sql);
-	$nama=mysql_fetch_array($hasil);
+	$hasil=mysqli_query($connect,$sql);
+	$nama=mysqli_fetch_array($hasil);
 ?>
 <script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 <script>

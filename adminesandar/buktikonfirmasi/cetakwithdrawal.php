@@ -6,8 +6,8 @@ session_start();
 $id=$_GET['id'];
 
 /*mysql query*/
-$sql=mysql_query("select * from withdrawal where id_withdrawal='$id'");
-$form1=mysql_fetch_array($sql);
+$sql=mysqli_query($connect,"select * from withdrawal where id_withdrawal='$id'");
+$form1=mysqli_fetch_array($sql);
 
 // set default header data
 $pdf->SetHeaderData(PDF_HEADER_LOGO, '40', 'PT. Esandar Arthamas Berjangka', 'APL Tower 36th Floor

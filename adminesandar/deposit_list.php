@@ -36,10 +36,10 @@ if(isset ($_SESSION['namauser']))
 										$start=0;
 										$page=1;
 									}
-									$file=mysql_query("select * from deposit ORDER BY tanggal DESC");
-									$jmlhtotal=mysql_num_rows($file)/100;
+									$file=mysqli_query($connect,"select * from deposit ORDER BY tanggal DESC");
+									$jmlhtotal=mysqli_num_rows($file)/100;
 									$sql="select * from deposit ORDER BY tanggal DESC limit $start,100";
-									$query=mysql_query($sql);
+									$query=mysqli_query($connect, $sql);
 									$no=1;
 									
 									echo'<table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -56,9 +56,9 @@ if(isset ($_SESSION['namauser']))
                                         </tr>
                                     </thead>';
                                     
-									while ($hasil=mysql_fetch_array($query))
+									while ($hasil=mysqli_fetch_array($query))
 									{	
-										$verifikasi=$hasil['status_verifikasi'];
+										// $verifikasi=$hasil['status_verifikasi'];
 										echo "<tbody>
 										<tr class='odd gradeX'>
 											<td>".$hasil['namanasabah']."</td>";
@@ -97,7 +97,7 @@ if(isset ($_SESSION['namauser']))
 									}
 									echo '<td>&nbsp &nbsp <a href="deposit_list.php?page='.($jmlhtotal).'">&raquo; LAST</a></td>';
 									echo '</tr></table>';
-								$jum=mysql_query("select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");?>
+								$jum=mysqli_query($connect, "select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");?>
 								</font></font>
 								
                             </div>
