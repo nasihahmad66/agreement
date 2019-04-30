@@ -12,7 +12,10 @@ if(isset ($_SESSION['nomoraccountdemo']))
 </head>
 <?php
 include('config.php');
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+// session_start();
 
 $sql=mysqli_query($connect,"select * from formulir1 where No_Identitas=".$_SESSION['id']."");
 $hasil=mysqli_fetch_array($sql);
@@ -69,7 +72,13 @@ Kode Akses Transaksi Nasabah (Personal Access Password)
 <td>Nama Lengkap</td>
 <td>:</td>
 <td>
-<?php session_start(); ?>
+
+<?php 
+if (session_status() == PHP_SESSION_NONE) {
+  session_start();
+}
+// session_start(); 
+?>
 <input class='nama' name='nama9' type='text' value='<?php 
 echo $_SESSION["nama"]; 
 ?>' size='50' readonly>
@@ -120,7 +129,7 @@ echo $_SESSION['id'];
 </tr>
 </table><br><br>
 
-<p align='left' width='70%'><br><br>Dengan mengisi kolom “YA” di bawah ini, saya menyatakan bahwa saya bertanggungjawab sepenuhnya terhadap kode akses transaksi Nasabah (Personal Access Password) dan tidak menyerahkan kode akses transaksi Nasabah (Personal Access Password) ke pihak lain, terutama kepada pegawai pialang Berjangka atau pihak yang memiliki kepentingan dengan Pialang Berjangka.</p><br>
+<p align='left' width='70%'><br><br>Dengan mengisi kolom ï¿½YAï¿½ di bawah ini, saya menyatakan bahwa saya bertanggungjawab sepenuhnya terhadap kode akses transaksi Nasabah (Personal Access Password) dan tidak menyerahkan kode akses transaksi Nasabah (Personal Access Password) ke pihak lain, terutama kepada pegawai pialang Berjangka atau pihak yang memiliki kepentingan dengan Pialang Berjangka.</p><br>
 
 <table align='center' width='100%' border='0'>
 	<tr>

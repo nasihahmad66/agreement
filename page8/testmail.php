@@ -24,8 +24,8 @@ try
 	$mail->SMTPSecure = "ssl";
 	$mail->Port       = 465;
 	$mail->SMTPDebug  = 0;
-	$mail->Username   = 'aryabayu23@gmail.com';  // isi dengan gmail anda
-	$mail->Password   = 'telotelook24';       // isi dengan password gmail anda
+	$mail->Username   = 'dev.wbmaster212@gmail.com';  // isi dengan gmail anda
+	$mail->Password   = 'T3St123#';       // isi dengan password gmail anda
 	
 	//$mail->AddReplyTo('david@mss.co.id', 'Esandar');      
 	$mail->AddAddress($to,'Real Account Request ['.$_SESSION['newid'].']'); // isi alamat tujuan email, NB : khusus untuk mengirim dari gmail ke yahoo agak lama

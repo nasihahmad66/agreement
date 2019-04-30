@@ -1,7 +1,7 @@
 <?php
 $hostmysql = "localhost";
-$username = "esandarc_userfor";
-$password = "Esandar2019!";
+$username = "root";
+$password = "";
 $dbname = "esandarc_formweb";
 $connect = mysqli_connect($hostmysql,$username,$password,$dbname);
 if (mysqli_connect_errno()){
