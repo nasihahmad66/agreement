@@ -4,6 +4,7 @@
 //ini_set('display_errors', 1);
 
 session_start();
+include('config.php');
 
 	$z=$_POST['nerima5'];
 	$_SESSION['nerima5'] = $z;
@@ -167,8 +168,6 @@ session_start();
 	$lainnyaJR2 =$_POST['lainJR25'];
 	$_SESSION['lainJR25'] = $lainnyaJR2;
 
-	
-include('config.php');
 $c5=$_POST['tgl5'];
 $d5=$_POST['bln5'];
 $e5=$_POST['thn5'];

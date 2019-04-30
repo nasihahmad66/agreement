@@ -7,7 +7,7 @@ if(isset ($_SESSION['nomoraccountdemo']))
 	
 if(isset($_POST['submit'])){
 
-include('../config.php');
+include('config.php');
 
 //page1
 $kode = $_SESSION['aecode'];
@@ -63,7 +63,7 @@ if($pernyataan == "Ya")
 		if($_SESSION['page1'] == "KONTRAK_BERJANGKA_EMAS_GOL,_GOL100,_GOL250" || $_SESSION['page1'] == "KONTRAK_BERJANGKA_KAKAO")
 	{
 		include('pdfnasabah/cetak.php');
-                include('testmail.php');
+        include('testmail.php');
 		echo "
 
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
@@ -156,18 +156,18 @@ if($pernyataan == "Ya")
 				<table width='100%' border='0' style='border-color:#00000' align='left'>
 					<tr>
 						<td style='font-size:16px; font-family:Arial;'><br/><strong>Saat ini permohonan Real Account anda sedang kami proses, kemudian Wakil Pialang kami akan melakukan proses Verifikasi dan Konfirmasi kepada calon nasabah melalui telepon terekam.
-</strong>
+							</strong>
 						</td>
-</tr>
-<tr>
-</tr>
-<tr>
-<td style='font-size:16px; font-family:Arial;'><br/><br/><strong>Hormat Kami</strong></td>
-</tr>
-<tr>
-<td style='font-size:16px; font-family:Arial;'><strong>PT. Esandar Arthamas Berjangka</strong></td>
 					</tr>
-				</table>
+				<tr>
+			</tr>
+		<tr>
+	<td style='font-size:16px; font-family:Arial;'><br/><br/><strong>Hormat Kami</strong></td>
+</tr>
+	<tr>
+		<td style='font-size:16px; font-family:Arial;'><strong>PT. Esandar Arthamas Berjangka</strong></td>
+	</tr>
+</table>
 				</div>
 
             </div>
@@ -184,7 +184,7 @@ if($pernyataan == "Ya")
 		else if($_SESSION['page1'] == "FOREX_0,1_LOT" || $_SESSION['page1'] == "FOREX_REGULAR" || $_SESSION['page1'] == "INDEX_USD_0,1_LOT" || $_SESSION['page1'] == "INDEX_USD_REGULAR" || $_SESSION['page1'] == "INDEX_IDR_0,1_LOT" || $_SESSION['page1'] == "INDEX_IDR_REGULAR")
 	{
 		include('pdfnasabah/cetak.php');
-                include('testmail.php');
+        include('testmail.php');
 		echo "
 
 <!DOCTYPE html PUBLIC '-//W3C//DTD XHTML 1.0 Transitional//EN' 'http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd'>
@@ -302,7 +302,6 @@ if($pernyataan == "Ya")
 </body>
 </html>";
 unset($_SESSION['aecode']);
-		
 	}
 
 	}
