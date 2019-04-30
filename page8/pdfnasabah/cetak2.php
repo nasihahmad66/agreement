@@ -22,8 +22,8 @@ $transaksi= $_SESSION['pengalaman'];
 $sebutkan=$_SESSION['sebut'];
 $jentrans = $_SESSION['page1'];
 		
-$transkaksi = mysql_query('select * From formulir1 where Jenis_Transaksi');
-$sql = mysql_fetch_array($transaksi);
+$transkaksi = mysqli_query($connect,'select * From formulir1 where Jenis_Transaksi');
+$sql = mysqli_fetch_array($transaksi);
 
 		
 $pdf->Open();
@@ -944,8 +944,8 @@ $pdf->Ln(5);
 //$img6=("$KTP5");
 
 $newid=$_SESSION['newid'];
-$sqlpage5=mysql_query("select * from formulir5 where id='$newid'");
-$lihatgambar=mysql_fetch_array($sqlpage5);
+$sqlpage5=mysqli_query($connect,"select * from formulir5 where id='$newid'");
+$lihatgambar=mysqli_fetch_array($sqlpage5);
 
 $lihat1=substr($lihatgambar['Rekening_Tagihan'], -4);
 $lihat2=substr($lihatgambar['Rekening_Telp'], -4);

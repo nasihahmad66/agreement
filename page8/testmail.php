@@ -1,5 +1,8 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+	session_start();
+}
+// session_start();
 require_once('phpmailer/class.phpmailer.php');
 require("phpmailer/class.smtp.php");
 $mail = new PHPMailer(true);
@@ -7,6 +10,7 @@ $mail->IsSMTP();
 $to=$_SESSION['email'];
 $att="pdfnasabah/".$_SESSION['newid']."-".$_SESSION['nama'].".pdf";
 $id=$_SESSION['newid'];
+$jen = "";
 if($_SESSION['jk5']=='Laki-Laki')
 {
 	$jen='Bapak';
