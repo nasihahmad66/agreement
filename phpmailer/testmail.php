@@ -76,10 +76,10 @@ $mail->SMTPAuth   = true;                  // enable SMTP authentication
 $mail->SMTPSecure = "ssl";                 // sets the prefix to the servier
 $mail->Host       = "smtp.gmail.com";      // sets GMAIL as the SMTP server
 $mail->Port       = 465;                   // set the SMTP port for the GMAIL server
-$mail->Username   = "user@gmail.com";  // GMAIL username
-$mail->Password   = "password";            // GMAIL password
+$mail->Username   = "dev.webmaster212@gmail.com";  // GMAIL username
+$mail->Password   = "T3St123#";            // GMAIL password
 
-$mail->SetFrom('contact@prsps.in', 'PRSPS');
+$mail->SetFrom('dev.webmaster212@gmail.com', 'First Last');
 
 //$mail->AddReplyTo("user2@gmail.com', 'First Last");
 
@@ -89,7 +89,7 @@ $mail->Subject    = "PRSPS password";
 
 $mail->MsgHTML($body);
 
-$address = "user2@yahoo.co.in";
+$address = "nasihahmad66@gmail.com";
 $mail->AddAddress($address, "user2");
 
 //$mail->AddAttachment("images/phpmailer.gif");      // attachment
