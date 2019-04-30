@@ -332,7 +332,7 @@ if($lihat1==".png" || $lihat1==".PNG" || $lihat1==".JPG" || $lihat1=="JPEG" || $
 							No_AC='$No_AC',NoTlp='$NoTlp',Jns_Rekening='$Jns_Rekening',lainnyaJR2='$lainnyaJR2',Rekening_Tagihan='$tagihan5',Rekening_Telp='$rektel5',skb='$skb5',skp='$skp5',
 							Foto_Kini='$kini5',Foto_KTP='$KTP5',Menerima='$Menerima',Tanggal='$Tanggal' where id='$newid'";
 							
-				$query = mysql_query($query_str) or die (mysql_error());
+				$query = mysqli_query($connect,$query_str) or die (mysqli_error());
 				
 			
 			if($Menerima== "Ya")
@@ -399,8 +399,7 @@ elseif($lihat2==".png" || $lihat2==".PNG" || $lihat2==".JPG" || $lihat2=="JPEG" 
 				$_SESSION['ktp'] = $KTP5;
 				
 				$Menerima = $_POST['nerima5'];
-				$query = mysql_query
-							("update formulir5 set Nama_Lengkap='$Nama_lengkap',Tempat_lahir='$Tempat_lahir',Tanggal_Lahir='$c5',Bulan_lahir='$d5',Tahun_lahir='$e5',No_NPWP='$No_NPWP',
+				$query = mysqli_query($connect,"update formulir5 set Nama_Lengkap='$Nama_lengkap',Tempat_lahir='$Tempat_lahir',Tanggal_Lahir='$c5',Bulan_lahir='$d5',Tahun_lahir='$e5',No_NPWP='$No_NPWP',
 							Jenis_Kelamin='$Jenis_Kelamin',Namaistrisuami='$Nama_Istri_Suami',Nama_Ibu_Kandung='$Nama_Ibu_Kandung',Status_Perkawinan='$Status_Perkawinan',Alamat_Rumah='$Alamat_Rumah',
 							kde_Pos='$kde_Pos',No_telp='$No_telp',No_fax='$No_fax',Notelphp='$No_Telp_hp',Status_Rumah='$Status_Rumah',lainnyaSR='$lainnyaSR',Tujuan_Rekening='$Tujuan_Rekening',
 							lainnyaTR='$lainnyaTR',Pengalaman_Investasi='$Pengalaman_Investasi',bidanginv='$bidanginv',Anggota_Keluarga='$Anggota_Keluarga',namaAK='$namaAK',Pailit_Pengadilan='$Pailit_Pengadilan', 
@@ -475,8 +474,7 @@ elseif($lihat3==".png" || $lihat3==".PNG" || $lihat3==".JPG" || $lihat3=="JPEG" 
 				$_SESSION['ktp'] = $KTP5;
 				
 				$Menerima = $_POST['nerima5'];
-				$query = mysql_query
-							("update formulir5 set Nama_Lengkap='$Nama_lengkap',Tempat_lahir='$Tempat_lahir',Tanggal_Lahir='$c5',Bulan_lahir='$d5',Tahun_lahir='$e5',No_NPWP='$No_NPWP',
+				$query = mysqli_query($connect,"update formulir5 set Nama_Lengkap='$Nama_lengkap',Tempat_lahir='$Tempat_lahir',Tanggal_Lahir='$c5',Bulan_lahir='$d5',Tahun_lahir='$e5',No_NPWP='$No_NPWP',
 							Jenis_Kelamin='$Jenis_Kelamin',Namaistrisuami='$Nama_Istri_Suami',Nama_Ibu_Kandung='$Nama_Ibu_Kandung',Status_Perkawinan='$Status_Perkawinan',Alamat_Rumah='$Alamat_Rumah',
 							kde_Pos='$kde_Pos',No_telp='$No_telp',No_fax='$No_fax',Notelphp='$No_Telp_hp',Status_Rumah='$Status_Rumah',lainnyaSR='$lainnyaSR',Tujuan_Rekening='$Tujuan_Rekening',
 							lainnyaTR='$lainnyaTR',Pengalaman_Investasi='$Pengalaman_Investasi',bidanginv='$bidanginv',Anggota_Keluarga='$Anggota_Keluarga',namaAK='$namaAK',Pailit_Pengadilan='$Pailit_Pengadilan', 
@@ -552,8 +550,7 @@ elseif($lihat4==".png" || $lihat4==".PNG" || $lihat4==".JPG" || $lihat4=="JPEG" 
 
 				$Menerima = $_POST['nerima5'];
 
-				$query = mysql_query
-							("update formulir5 set Nama_Lengkap='$Nama_lengkap',Tempat_lahir='$Tempat_lahir',Tanggal_Lahir='$c5',Bulan_lahir='$d5',Tahun_lahir='$e5',No_NPWP='$No_NPWP',
+				$query = mysqli_query($connect,"update formulir5 set Nama_Lengkap='$Nama_lengkap',Tempat_lahir='$Tempat_lahir',Tanggal_Lahir='$c5',Bulan_lahir='$d5',Tahun_lahir='$e5',No_NPWP='$No_NPWP',
 							Jenis_Kelamin='$Jenis_Kelamin',Namaistrisuami='$Nama_Istri_Suami',Nama_Ibu_Kandung='$Nama_Ibu_Kandung',Status_Perkawinan='$Status_Perkawinan',Alamat_Rumah='$Alamat_Rumah',
 							kde_Pos='$kde_Pos',No_telp='$No_telp',No_fax='$No_fax',Notelphp='$No_Telp_hp',Status_Rumah='$Status_Rumah',lainnyaSR='$lainnyaSR',Tujuan_Rekening='$Tujuan_Rekening',
 							lainnyaTR='$lainnyaTR',Pengalaman_Investasi='$Pengalaman_Investasi',bidanginv='$bidanginv',Anggota_Keluarga='$Anggota_Keluarga',namaAK='$namaAK',Pailit_Pengadilan='$Pailit_Pengadilan', 

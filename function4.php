@@ -1,9 +1,8 @@
 <?php
-		session_start();
-		$Pialang = $_POST['pialang'];
-		$_SESSION['pialang'] = $Pialang;
-		
-		$b=$_POST['radio4'];
+session_start();
+$Pialang = $_POST['pialang'];
+$_SESSION['pialang'] = $Pialang;
+$b=$_POST['radio4'];
 				
 include('config.php');
 $Nama_Lengkap = $_POST['nama4'];

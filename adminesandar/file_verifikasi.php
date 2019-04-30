@@ -40,7 +40,7 @@ if(isset ($_SESSION['namauser']))
 									if(isset($_GET['page']))	$page=($_GET['page']-1)*20;
 									$file=mysqli_query($connect,"select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai'");
 									$jmlhtotal=mysqli_num_rows($file)/20;
-									$sql="select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai' order by status_verifikasi desc limit $page,20";
+									$sql="select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Belum Selesai' order by tanggal_verifikasi desc limit $page,20";
 									$query=mysqli_query($connect,$sql);
 									$no=1;
 									echo'<table class="table table-striped table-bordered table-hover" id="dataTables-example">

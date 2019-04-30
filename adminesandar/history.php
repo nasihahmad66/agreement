@@ -41,7 +41,7 @@ if(isset ($_SESSION['namauser']))
 									$file=mysqli_query($connect,"select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
 									$jmlhtotal=mysqli_num_rows($file)/20;
 									
-									$sql="select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai' order by id ".$order." limit $start,20";
+									$sql="select * from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai' order by id desc limit $start,20";
 									$query=mysqli_query($connect,$sql);
 									$no=1;
 									$jum=mysqli_query($connect,"select count(id) as 'jmlh' from namaid where status_verifikasi='Telah Terverifikasi' and status_pialang='Selesai'");
