@@ -29,7 +29,7 @@ if($jumlah=="Rp")
 	$sql=mysqli_query($connect, "insert into withdrawal(nologin, namanasabah, email, bank, nba, jumlah, bukti, IP, date) values('$nologin','$namanasabah','$email','$bank','$nba', '$jumlah $nominalidr','$buktigambar','$ip','$tgl_str')");
 	require_once('PHPMailer-master/class.phpmailer.php');
 	$mail = new PHPMailer(true);
-	$mail->IsSMTP();
+	$mail->isSMTP();
 	try 
 		{
 			$mail->Host       = "smtp.gmail.com"; // isi dengan host sesuai keinginan Anda 74.125.129.108
@@ -40,9 +40,9 @@ if($jumlah=="Rp")
 			$mail->SMTPDebug  = 0;
 			$mail->Username   = 'davidhariyanto08@gmail.com';  // isi dengan gmail anda
 			$mail->Password   = 'Rx-*f3R@r1';       // isi dengan password gmail anda
-			$mail->AddCC('admin@hif.co.id', 'HIF');   //admin@hif.co.id  
-			$mail->AddAddress('hif.settlement@yahoo.com','HIF'); // hif.settlement@yahoo.com
-			$mail->SetFrom('davidhariyanto08@gmail.com', 'HIF'); 
+			$mail->addCC('admin@hif.co.id', 'HIF');   //admin@hif.co.id  
+			$mail->addAddress('hif.settlement@yahoo.com','HIF'); // hif.settlement@yahoo.com
+			$mail->setFrom('davidhariyanto08@gmail.com', 'HIF'); 
 			$mail->Subject = "Penarikan $namanasabah";
 			//$mail->AddAttachment($att);
 			$mail->AltBody = 'Untuk melihat email ini, gunakan browser yang kompatibel dengan html';
@@ -55,7 +55,7 @@ if($jumlah=="Rp")
 			<tr><td>Jumlah</td><td>:</td><td> $jumlah $nominalidr</td></tr>
 			<tr><td>IP</td><td>:</td><td> $ip</td></tr>
 			<tr><td>Tanggal</td><td>:</td><td> $tgl_str</td></tr></table>";
-			$mail->Send();
+			$mail->send();
 		
 		}
 		catch (phpmailerException $e)
@@ -74,7 +74,7 @@ if($jumlah=="Rp")
 		{
 			
 			$mail = new PHPMailer(true);
-			$mail->IsSMTP();
+			$mail->isSMTP();
 			//$att="$buktigambar";
 			try 
 			{
@@ -86,8 +86,8 @@ if($jumlah=="Rp")
 				$mail->SMTPDebug  = 0;
 				$mail->Username   = 'davidhariyanto08@gmail.com';  // isi dengan gmail anda
 				$mail->Password   = 'Rx-*f3R@r1';       // isi dengan password gmail anda
-				$mail->AddAddress($email,'HIF'); // isi alamat tujuan email, NB : khusus untuk mengirim dari gmail ke yahoo agak lama
-				$mail->SetFrom('davidhariyanto08@gmail.com', 'HIF'); 
+				$mail->addAddress($email,'HIF'); // isi alamat tujuan email, NB : khusus untuk mengirim dari gmail ke yahoo agak lama
+				$mail->setFrom('davidhariyanto08@gmail.com', 'HIF'); 
 				$mail->Subject = "Penarikan $namanasabah";
 				//$mail->AddAttachment($att);
 				$mail->AltBody = 'Untuk melihat email ini, gunakan browser yang kompatibel dengan html';
@@ -99,7 +99,7 @@ if($jumlah=="Rp")
 				<tr><td>No. Bank Account</td><td>:</td><td> $nba</td></tr>
 				<tr><td>Jumlah</td><td>:</td><td> $jumlah $nominalidr</td></tr>
 				<tr><td>Tanggal</td><td>:</td><td> $tgl_str</td></tr></table>";
-				$mail->Send();
+				$mail->send();
 		
 			}
 			catch (phpmailerException $e)
@@ -127,7 +127,7 @@ else if ($jumlah=="USD")
 	$sql=mysqli_query($connect, "insert into withdrawal(nologin, namanasabah, email, bank, nba, jumlah, bukti, IP, date) values('$nologin','$namanasabah','$email','$bank','$nba', '$jumlah $nominalusd','$buktigambar','$ip','$tgl_str')");
 	require_once('PHPMailer-master/class.phpmailer.php');
 	$mail = new PHPMailer(true);	
-	$mail->IsSMTP();
+	$mail->isSMTP();
 	//$att="$buktigambar";
 	try 
 	{
@@ -139,9 +139,9 @@ else if ($jumlah=="USD")
 		$mail->SMTPDebug  = 0;
 		$mail->Username   = 'davidhariyanto08@gmail.com';  // isi dengan gmail anda
 		$mail->Password   = 'Rx-*f3R@r1';       // isi dengan password gmail anda
-		$mail->AddAddress('admin@hif.co.id','HIF'); //
-		$mail->AddCC('hif.settlement@yahoo.com', 'HIF');		
-		$mail->SetFrom('davidhariyanto08@gmail.com', 'HIF'); 
+		$mail->addAddress('admin@hif.co.id','HIF'); //
+		$mail->addCC('hif.settlement@yahoo.com', 'HIF');		
+		$mail->setFrom('davidhariyanto08@gmail.com', 'HIF'); 
 		$mail->Subject = "Penarikan $namanasabah";
 		//$mail->AddAttachment($att);
 		$mail->AltBody = 'Untuk melihat email ini, gunakan browser yang kompatibel dengan html';
@@ -154,7 +154,7 @@ else if ($jumlah=="USD")
 		<tr><td>Jumlah</td><td>:</td><td> $jumlah $nominalusd</td></tr>
 		<tr><td>IP</td><td>:</td><td> $ip</td></tr>
 		<tr><td>Tanggal</td><td>:</td><td> $tgl_str</td></tr></table>";
-		$mail->Send();
+		$mail->send();
 	
 	} catch (phpmailerException $e){print_r($mail); echo $e;
 	} catch (Exception $e) { echo $e;

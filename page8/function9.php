@@ -29,6 +29,9 @@ $transaksi = $_SESSION['a'];
 $sebutkan = $_SESSION['sebut'];
 $tanggallahir = "$tanggal - $bulan - $tahun";
 
+$nama_file_in_folder = urlencode($_SESSION['nama']);
+$nama_file_link = str_replace('+', '%20', $nama_file_in_folder);
+
 $nama_lengkap = $_POST['nama9'];
 $tempat_lahir = $_POST['tempat9'];
 $c3=$_POST['tgl9'];
@@ -103,7 +106,7 @@ if($pernyataan == "Ya")
 						<td width='20%'>Nama Lengkap</td>
 						<td>:</td>
 						<td> ".$_SESSION['nama']."</td>
-                                                <td rowspan='11' valign='top' align='center'><a href='/agreement/page8/pdfnasabah/$newid-".$_SESSION['nama'].".pdf' target='_blank'><strong>Download File Agreement ".$_SESSION['nama']."</strong><br/><img src='PDF_Download_Button.jpg' width='170' height='100'/></a></td>
+                                                <td rowspan='11' valign='top' align='center'><a href='/agreement/page8/pdfnasabah/$newid-".$nama_file_link.".pdf' target='_blank'><strong>Download File Agreement ".$_SESSION['nama']."</strong><br/><img src='PDF_Download_Button.jpg' width='170' height='100'/></a></td>
 					</tr>
 					<tr>
 						<td width='20%'>Tempat / Tanggal Lahir</td>
@@ -224,7 +227,7 @@ if($pernyataan == "Ya")
 						<td width='20%'>Nama Lengkap</td>
 						<td>:</td>
 						<td> ".$_SESSION['nama']."</td>
-                                                <td rowspan='11' valign='top' align='center'><a href='/agreement/page8/pdfnasabah/$newid-".$_SESSION['nama'].".pdf' target='_blank'><strong>Download File Agreement ".$_SESSION['nama']."</strong><br/><img src='PDF_Download_Button.jpg' width='170' height='100'/></a></td>
+                                                <td rowspan='11' valign='top' align='center'><a href='/agreement/page8/pdfnasabah/$newid-".$nama_file_link.".pdf' target='_blank'><strong>Download File Agreement ".$_SESSION['nama']."</strong><br/><img src='PDF_Download_Button.jpg' width='170' height='100'/></a></td>
 					</tr>
 					<tr>
 						<td width='20%'>Tempat / Tanggal Lahir</td>

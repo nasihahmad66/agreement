@@ -67,7 +67,7 @@ $mail             = new PHPMailer();
 $body             = "gdssdh";
 //$body             = eregi_replace("[\]",'',$body);
 
-$mail->IsSMTP(); // telling the class to use SMTP
+$mail->isSMTP(); // telling the class to use SMTP
 $mail->Host       = "ssl://smtp.gmail.com"; // SMTP server
 $mail->SMTPDebug  = 1;                     // enables SMTP debug information (for testing)
                                            // 1 = errors and messages
@@ -79,7 +79,7 @@ $mail->Port       = 465;                   // set the SMTP port for the GMAIL se
 $mail->Username   = "dev.webmaster212@gmail.com";  // GMAIL username
 $mail->Password   = "T3St123#";            // GMAIL password
 
-$mail->SetFrom('dev.webmaster212@gmail.com', 'First Last');
+$mail->setFrom('dev.webmaster212@gmail.com', 'First Last');
 
 //$mail->AddReplyTo("user2@gmail.com', 'First Last");
 
@@ -87,10 +87,10 @@ $mail->Subject    = "PRSPS password";
 
 //$mail->AltBody    = "To view the message, please use an HTML compatible email viewer!"; // optional, comment out and test
 
-$mail->MsgHTML($body);
+$mail->msgHTML($body);
 
 $address = "nasihahmad66@gmail.com";
-$mail->AddAddress($address, "user2");
+$mail->addAddress($address, "user2");
 
 //$mail->AddAttachment("images/phpmailer.gif");      // attachment
 //$mail->AddAttachment("images/phpmailer_mini.gif"); // attachment
