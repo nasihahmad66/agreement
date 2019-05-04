@@ -23,13 +23,14 @@ else if($_SESSION['jk5']=='Perempuan')
 try 
 {
     
-	$mail->Host       = "smtp.gmail.com"; // isi dengan host sesuai keinginan Anda 74.125.129.108
-	$mail->SMTPAuth   = true;
-	$mail->SMTPSecure = "ssl";
-	$mail->Port       = 465;
-	$mail->SMTPDebug  = 0;
-	$mail->Username   = 'dev.wbmaster212@gmail.com';  // isi dengan gmail anda
-	$mail->Password   = 'T3St123#';       // isi dengan password gmail anda
+	$mail->SMTPDebug = 0;                                 
+    $mail->isSMTP();                                      
+    $mail->Host = 'smtp.gmail.com';  
+    $mail->SMTPAuth = true;                               
+    $mail->Username = 'arya_pamungkas_24rpl@student.smktelkom-mlg.sch.id';                 
+    $mail->Password = 'franciersnew';                           
+    $mail->SMTPSecure = 'tls';                            
+    $mail->Port = 587;       // isi dengan password gmail anda
 	
 	//$mail->AddReplyTo('david@mss.co.id', 'Esandar');      
 	$mail->AddAddress($to,'Real Account Request ['.$_SESSION['newid'].']'); // isi alamat tujuan email, NB : khusus untuk mengirim dari gmail ke yahoo agak lama

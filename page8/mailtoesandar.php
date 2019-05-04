@@ -1,9 +1,10 @@
 <?php
-session_start();
+if (session_status() == PHP_SESSION_NONE) {
+    session_start();
+}
 require_once('phpmailer/class.phpmailer.php');
 require("phpmailer/class.smtp.php");
 $mail = new PHPMailer(true);
-$mail->IsSMTP();
 $to=$_SESSION['email'];
 $att="pdfnasabah/".$_SESSION['newid']."-".$_SESSION['nama'].".pdf";
 $id=$_SESSION['newid'];
@@ -18,20 +19,20 @@ else if($_SESSION['jk5']=='Perempuan')
 	
 try 
 {
-	$mail->Host       = "103.225.209.36"; // isi dengan host sesuai keinginan Anda 74.125.129.108
-	$mail->SMTPAuth   = true;
-	$mail->SMTPSecure = "tls";
-	$mail->Host       = "103.225.209.36";
-	$mail->Port       = 25;
-	$mail->SMTPDebug  = 0;
-	$mail->Username   = 'admin@esandar.co.id';  // isi dengan gmail anda
-	$mail->Password   = '4W-c~y+m7DAi';       // isi dengan password gmail anda
+	$mail->SMTPDebug = 0;                                 
+    $mail->isSMTP();                                      
+    $mail->Host = 'smtp.gmail.com';  
+    $mail->SMTPAuth = true;                               
+    $mail->Username = 'arya_pamungkas_24rpl@student.smktelkom-mlg.sch.id';                 
+    $mail->Password = 'franciersnew';                           
+    $mail->SMTPSecure = 'tls';                            
+    $mail->Port = 587;       // isi dengan password gmail anda
 	//$mail->AddReplyTo('david@mss.co.id', 'Esandar');      
-	$mail->AddAddress($to,'Real Account Request ['.$_SESSION['newid'].']'); // isi alamat tujuan email, NB : khusus untuk mengirim dari gmail ke yahoo agak lama
-	$mail->AddBCC("davidhariyanto08@gmail.com", 'Real Account Request ['.$_SESSION['newid'].']');
-	$mail->SetFrom('admin@esandar.co.id', 'Real Account Request ['.$_SESSION['newid'].']'); 
+	$mail->addAddress($to,'Real Account Request ['.$_SESSION['newid'].']'); // isi alamat tujuan email, NB : khusus untuk mengirim dari gmail ke yahoo agak lama
+	$mail->addBCC("davidhariyanto08@gmail.com", 'Real Account Request ['.$_SESSION['newid'].']');
+	$mail->setFrom('admin@esandar.co.id', 'Real Account Request ['.$_SESSION['newid'].']'); 
 	$mail->Subject = 'Real Account Request ['.$_SESSION['newid'].']';
-	$mail->AddAttachment($att);
+	$mail->addAttachment($att);
 	$mail->AltBody = 'Untuk melihat email ini, gunakan browser yang kompatibel dengan html';
 	
 	$mail->Body = "Kepada Yth. ".$jen." ".$_SESSION['nama']." <br/>
